@@ -15,6 +15,7 @@ GameBoardController::GameBoardController()
 
 GameBoardController::~GameBoardController()
 {
+    CC_SAFE_RELEASE(pView);
 }
 
 bool GameBoardController::init()
@@ -23,6 +24,7 @@ bool GameBoardController::init()
     {
         pView = GameBoardView::create();
         pView->initWithDelegate(this);
+        pView->retain();
         this->addChild(pView, 0);
         this->schedule(schedule_selector(GameBoardController::update));
         //this->setTouchEnabled(true);

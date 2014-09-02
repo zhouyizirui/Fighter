@@ -26,17 +26,7 @@ bool GameBoardView::init()
     CCSprite* titleIcon = CCSprite::createWithSpriteFrameName("shoot_copyright.png");
     titleIcon->setPosition(ccp(size.width/2, size.height/1.4f));
     this->addChild(titleIcon, 1);
-    /*
-    CCLabelTTF* startLabel = CCLabelTTF::create(S_START, "thonburi", 36);
-    CCMenuItemLabel* startItem = CCMenuItemLabel::create(startLabel, this, menu_selector(GameBoardView::startGameCallback));
-    startItem->setPosition(ccp(0, 50));
-    CCLabelTTF* exitLabel = CCLabelTTF::create(S_EXIT, "Marker Felt", 36);
-    CCMenuItemLabel * exitItem = CCMenuItemLabel::create(exitLabel, this, menu_selector(GameBoardView::exitGameCallback));
-    exitItem->setPosition(ccp(0, -50));
-    CCMenu* menu = CCMenu::create(startItem, exitItem, NULL);
-    menu->setPosition(ccp(size.width/2, size.height/2.5));
-    this->addChild(menu, 0);
-     */
+
     beginSprite = CCSprite::create("begin_game.png");
     beginSprite->setPosition(ccp(size.width/2, size.height/2.2));
     this->addChild(beginSprite);
@@ -60,7 +50,6 @@ void GameBoardView::initWithDelegate(GameBoardViewDelegate* delegate)
 bool GameBoardView::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
 {
     CCLOG("Touch the screen");
-    //CCPoint location = CCDirector::sharedDirector()->convertToGL(pTouch->getLocation());
     if((beginSprite->boundingBox()).containsPoint(pTouch->getLocation()))
     {
         this->pDelegate->dealWithTouchBegan(pTouch->getLocation(), 1);

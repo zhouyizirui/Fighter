@@ -12,6 +12,9 @@
 
 #define S_START "开始游戏"
 #define S_EXIT "退出游戏"
+#define MOVE_POS "Move"
+
+
 #define PLAYER_FRAME_COUNT 2
 
 

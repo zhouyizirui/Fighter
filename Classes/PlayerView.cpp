@@ -14,6 +14,7 @@ PlayerView::PlayerView()
 
 PlayerView::~PlayerView()
 {
+    CCNotificationCenter::sharedNotificationCenter()->removeAllObservers(this);
 }
 
 bool PlayerView::init()
@@ -25,7 +26,6 @@ bool PlayerView::init()
     CCSize size = CCDirector::sharedDirector()->getVisibleSize();
     CCSprite::createWithSpriteFrameName("hero1.png");
     this->setPosition(ccp(size.width/2, 100));
-    //this->addChild(pPlayer, 1);
     
     CCArray* aniFrames = CCArray::createWithCapacity(2);
     for(int i = 0; i<PLAYER_FRAME_COUNT; i++)
@@ -39,10 +39,13 @@ bool PlayerView::init()
     CCAnimation* animation = CCAnimation::createWithSpriteFrames(aniFrames, 0.1f);
     CCAnimate* animate = CCAnimate::create(animation);
     this->runAction(CCRepeatForever::create(animate));
+    
+    CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(PlayerView::onMoveTo), MOVE_POS, NULL);
     return true;
 }
 
-void PlayerView::onMoveTo(CCPoint destPoint)
+void PlayerView::onMoveTo(CCObject* destPoint)
 {
-    this->setPosition(destPoint);
+    CCLOG("Receive the move message");
+    this->setPosition(*(CCPoint*)destPoint);
 }
