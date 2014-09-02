@@ -14,12 +14,14 @@
 #include "Protocols.h"
 #include "PlayerView.h"
 #include "BackgroundView.h"
+#include "SmallEnemysView.h"
 USING_NS_CC;
 
 class GameSceneView:public CCLayer
 {
 private:
     PlayerView* pPlayer;
+    SmallEnemysView* pSmallEnemys;
     BackgroundView* pBackground;
     GameSceneViewDelegate* pDelegate;
 public:
@@ -30,6 +32,7 @@ public:
     CREATE_FUNC(GameSceneView);
     void makeBackground();
     void makePlayer();
+    void makeSmallEnemys();
     virtual bool ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent);
     virtual void ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent);
 };

@@ -20,6 +20,7 @@ bool GameSceneView::init()
     
     makePlayer();
     makeBackground();
+    makeSmallEnemys();
     
     setTouchEnabled(true);
     setAccelerometerEnabled(true);
@@ -38,6 +39,12 @@ void GameSceneView::makePlayer()
 {
     pPlayer = PlayerView::create();
     this->addChild(pPlayer, 1);
+}
+
+void GameSceneView::makeSmallEnemys()
+{
+    pSmallEnemys = SmallEnemysView::create();
+    this->addChild(pSmallEnemys, 1);
 }
 
 void GameSceneView::initWithDelegate(GameSceneViewDelegate* delegate)

@@ -274,6 +274,9 @@
 		EFDC3AA719B4BB3900BC8BB0 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDC3AA519B4BB3900BC8BB0 /* Player.cpp */; };
 		EFDC3AAA19B5AE7300BC8BB0 /* PlayerView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDC3AA819B5AE7300BC8BB0 /* PlayerView.cpp */; };
 		EFDC3AAD19B5B3AC00BC8BB0 /* BackgroundView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDC3AAB19B5B3AC00BC8BB0 /* BackgroundView.cpp */; };
+		EFDC3AB019B603D000BC8BB0 /* BulletsView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDC3AAE19B603D000BC8BB0 /* BulletsView.cpp */; };
+		EFDC3AB319B6088300BC8BB0 /* SmallEnemys.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDC3AB119B6088300BC8BB0 /* SmallEnemys.cpp */; };
+		EFDC3AB619B60AEF00BC8BB0 /* SmallEnemysView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDC3AB419B60AEF00BC8BB0 /* SmallEnemysView.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -831,6 +834,12 @@
 		EFDC3AA919B5AE7300BC8BB0 /* PlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerView.h; sourceTree = "<group>"; };
 		EFDC3AAB19B5B3AC00BC8BB0 /* BackgroundView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BackgroundView.cpp; sourceTree = "<group>"; };
 		EFDC3AAC19B5B3AC00BC8BB0 /* BackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundView.h; sourceTree = "<group>"; };
+		EFDC3AAE19B603D000BC8BB0 /* BulletsView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BulletsView.cpp; sourceTree = "<group>"; };
+		EFDC3AAF19B603D000BC8BB0 /* BulletsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BulletsView.h; sourceTree = "<group>"; };
+		EFDC3AB119B6088300BC8BB0 /* SmallEnemys.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SmallEnemys.cpp; sourceTree = "<group>"; };
+		EFDC3AB219B6088300BC8BB0 /* SmallEnemys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmallEnemys.h; sourceTree = "<group>"; };
+		EFDC3AB419B60AEF00BC8BB0 /* SmallEnemysView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SmallEnemysView.cpp; sourceTree = "<group>"; };
+		EFDC3AB519B60AEF00BC8BB0 /* SmallEnemysView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmallEnemysView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2008,6 +2017,10 @@
 				EFDC3AA919B5AE7300BC8BB0 /* PlayerView.h */,
 				EFDC3AAB19B5B3AC00BC8BB0 /* BackgroundView.cpp */,
 				EFDC3AAC19B5B3AC00BC8BB0 /* BackgroundView.h */,
+				EFDC3AAE19B603D000BC8BB0 /* BulletsView.cpp */,
+				EFDC3AAF19B603D000BC8BB0 /* BulletsView.h */,
+				EFDC3AB419B60AEF00BC8BB0 /* SmallEnemysView.cpp */,
+				EFDC3AB519B60AEF00BC8BB0 /* SmallEnemysView.h */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -2037,6 +2050,8 @@
 			children = (
 				EFDC3AA519B4BB3900BC8BB0 /* Player.cpp */,
 				EFDC3AA619B4BB3900BC8BB0 /* Player.h */,
+				EFDC3AB119B6088300BC8BB0 /* SmallEnemys.cpp */,
+				EFDC3AB219B6088300BC8BB0 /* SmallEnemys.h */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -2149,6 +2164,7 @@
 				15A3D9071682F7D5002FB0C5 /* b2ChainShape.cpp in Sources */,
 				EFDC3A9D19B4A5F800BC8BB0 /* GameSceneView.cpp in Sources */,
 				15A3D9081682F7D5002FB0C5 /* b2CircleShape.cpp in Sources */,
+				EFDC3AB319B6088300BC8BB0 /* SmallEnemys.cpp in Sources */,
 				15A3D9091682F7D5002FB0C5 /* b2EdgeShape.cpp in Sources */,
 				15A3D90A1682F7D5002FB0C5 /* b2PolygonShape.cpp in Sources */,
 				15A3D90B1682F7D5002FB0C5 /* b2BlockAllocator.cpp in Sources */,
@@ -2193,6 +2209,7 @@
 				15A3D9291682F7D5002FB0C5 /* b2WeldJoint.cpp in Sources */,
 				15A3D92A1682F7D5002FB0C5 /* b2WheelJoint.cpp in Sources */,
 				15A3D9391682F7D5002FB0C5 /* b2Rope.cpp in Sources */,
+				EFDC3AB619B60AEF00BC8BB0 /* SmallEnemysView.cpp in Sources */,
 				15A3D9951682F7F9002FB0C5 /* chipmunk.c in Sources */,
 				15A3D9971682F7F9002FB0C5 /* cpConstraint.c in Sources */,
 				15A3D9981682F7F9002FB0C5 /* cpDampedRotarySpring.c in Sources */,
@@ -2321,6 +2338,7 @@
 				1A8F3B82175E05DA00049216 /* spine-cocos2dx.cpp in Sources */,
 				298B29C418D0668400C1920F /* ScrollViewReader.cpp in Sources */,
 				38FA2EB1194EA58000FF2BE4 /* CCActionTimelineCache.cpp in Sources */,
+				EFDC3AB019B603D000BC8BB0 /* BulletsView.cpp in Sources */,
 				1AB87035175E0A84005D39BF /* WebSocket.cpp in Sources */,
 				375BD4C51868411B0024609E /* TriggerMng.cpp in Sources */,
 				1A9CE8781765A12C000E3062 /* AssetsManager.cpp in Sources */,

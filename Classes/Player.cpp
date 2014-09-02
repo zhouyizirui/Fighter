@@ -11,7 +11,11 @@
 
 void Player::movePosition(CCPoint destPoint)
 {
-    CCNotificationCenter::sharedNotificationCenter()->postNotification(MOVE_POS, (CCObject*)&destPoint);
+    if(destPoint.y<80) destPoint.y = 80;
+    if(destPoint.x<50) destPoint.x = 50;
+    if(destPoint.x>480-50) destPoint.x = 480-50;
+    if(destPoint.y>800-50) destPoint.y = 800-50;
+    CCNotificationCenter::sharedNotificationCenter()->postNotification(PLANE_MOVE, (CCObject*)&destPoint);
 }
 
 void Player::onMessage(const string &msg)

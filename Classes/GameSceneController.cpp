@@ -15,28 +15,38 @@ GameSceneController::GameSceneController()
 GameSceneController::~GameSceneController()
 {
     CC_SAFE_RELEASE(pView);
-    CC_SAFE_RELEASE(player);
+    CC_SAFE_RELEASE(pPlayer);
+    CC_SAFE_RELEASE(pSmallEnemys);
+}
+
+void GameSceneController::createEnemys()
+{
+    CCLOG("Create a enemy!");
+    pSmallEnemys->createEnemy();
 }
 
 void GameSceneController::update(float dt)
 {
-    
+
 }
 
 bool GameSceneController::init()
 {
     if(CCLayer::init())
     {
-        player = new Player();
-        player->retain();
+        pPlayer = new Player();
+        pPlayer->retain();
         
         pView = GameSceneView::create();
         pView->initWithDelegate(this);
         pView->retain();
         
-        //pView->initWithPlayer();
+        pSmallEnemys = new SmallEnemys();
+        pSmallEnemys->retain();
+        
         this->addChild(pView, 0);
         this->schedule(schedule_selector(GameSceneController::update));
+        this->schedule(schedule_selector(GameSceneController::createEnemys), 3);
     }
     return true;
 }
@@ -63,5 +73,5 @@ void GameSceneController::dealWithTouchMove(CCPoint duraPoint)
 {
     //Judge the point whether exceeds the border or not
     //CCLOG("Move the scene controller");
-    player->movePosition(duraPoint);
+    pPlayer->movePosition(duraPoint);
 }

@@ -20,6 +20,7 @@ public:
     ~PlayerView();
     bool init();
     void onMoveTo(CCObject* destPoint);
+    void onBroken();
     CREATE_FUNC(PlayerView);
 };
 #endif /* defined(__Fighter__PlayerView__) */

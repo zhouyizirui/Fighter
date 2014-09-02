@@ -40,7 +40,8 @@ bool PlayerView::init()
     CCAnimate* animate = CCAnimate::create(animation);
     this->runAction(CCRepeatForever::create(animate));
     
-    CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(PlayerView::onMoveTo), MOVE_POS, NULL);
+    CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(PlayerView::onMoveTo), PLANE_MOVE, NULL);
+    CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(PlayerView::onBroken), PLANE_BROKEN, NULL);
     return true;
 }
 
@@ -48,4 +49,9 @@ void PlayerView::onMoveTo(CCObject* destPoint)
 {
     CCLOG("Receive the move message");
     this->setPosition(*(CCPoint*)destPoint);
+}
+
+void PlayerView::onBroken()
+{
+    
 }

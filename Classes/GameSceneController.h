@@ -13,12 +13,14 @@
 #include "GameSceneView.h"
 #include "Protocols.h"
 #include "Player.h"
+#include "SmallEnemys.h"
 
 class GameSceneController:public CCLayer, public GameSceneViewDelegate
 {
 private:
     GameSceneView* pView;
-    Player* player;
+    Player* pPlayer;
+    SmallEnemys* pSmallEnemys;
 public:
     GameSceneController();
     virtual ~GameSceneController();
@@ -27,6 +29,7 @@ public:
     virtual void dealWithTouchMove(CCPoint duraPoint);
     virtual bool init();
     void update(float dt);
+    void createEnemys();
     CREATE_FUNC(GameSceneController);
 };
 #endif /* defined(__Fighter__GameSceneController__) */
