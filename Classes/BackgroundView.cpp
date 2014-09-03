@@ -15,6 +15,7 @@ BackgroundView::BackgroundView()
 
 BackgroundView::~BackgroundView()
 {
+    
 }
 
 bool BackgroundView::init()

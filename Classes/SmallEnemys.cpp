@@ -20,6 +20,11 @@ SmallEnemys::~SmallEnemys()
     CC_SAFE_RELEASE(smallEnemyArray);
 }
 
+CCArray* SmallEnemys::getSmallArray()
+{
+    return smallEnemyArray;
+}
+
 bool SmallEnemys::init()
 {
     smallEnemyArray = CCArray::create();
@@ -34,6 +39,7 @@ void SmallEnemys::createEnemy()
     CCPoint point = ccp(xLocation, yLocation);
     EnemyPoint *enemyPoint = new EnemyPoint();
     enemyPoint->setPoint(point.x, point.y);
+    enemyPoint->setSize(SMALL_ENEMY_WIDTH, SMALL_ENEMY_HEIGHT);
     smallEnemyArray->addObject(enemyPoint);
     CCNotificationCenter::sharedNotificationCenter()->postNotification(ADD_SMALL_ENEMY, (CCObject*)&point);
 }
@@ -66,6 +72,13 @@ int SmallEnemys::detectBorder()
         if(enemy->getPointY()<0) return i;
     }
     return -1;
+}
+
+void SmallEnemys::hitPlayer(int index)
+{
+    CCLOG("In the hit player");
+    smallEnemyArray->removeObjectAtIndex(index);
+    CCNotificationCenter::sharedNotificationCenter()->postNotification(CRASH_ENEMY,(CCObject*)&index);
 }
 
 void SmallEnemys::onMessage(const string& msg)

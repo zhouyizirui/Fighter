@@ -9,7 +9,8 @@
 #include "SmallEnemysView.h"
 #include "Constants.h"
 
-SmallEnemysView::SmallEnemysView()
+SmallEnemysView::SmallEnemysView():
+enemysArray(NULL)
 {
 
 }
@@ -17,6 +18,7 @@ SmallEnemysView::SmallEnemysView()
 SmallEnemysView::~SmallEnemysView()
 {
     CC_SAFE_RELEASE(enemysArray);
+    CCNotificationCenter::sharedNotificationCenter()->removeAllObservers(this);
 }
 
 bool SmallEnemysView::init()
@@ -26,12 +28,14 @@ bool SmallEnemysView::init()
     CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(SmallEnemysView::onCreateEnemy), ADD_SMALL_ENEMY, NULL);
     CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(SmallEnemysView::onMoveStep), SMALL_ENEMY_MOVE, NULL);
     CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(SmallEnemysView::onRemoveEnemy), REMOVE_ENEMY, NULL);
+    CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(SmallEnemysView::onCrashEnemy), CRASH_ENEMY, NULL);
     return true;
 }
 
 void SmallEnemysView::onCreateEnemy(CCObject* setPoint)
 {
     CCSprite* sprite = CCSprite::createWithSpriteFrameName("enemy1.png");
+    //CCLOG("The small bouding box %f, %f, %f, %f", sprite->boundingBox().getMaxX(), sprite->boundingBox().getMaxY(), sprite->boundingBox().getMinX(), sprite->boundingBox().getMinY());
     enemysArray->addObject(sprite);
     CCPoint startPoint = *(CCPoint*)setPoint;
     sprite->setPosition(startPoint);
@@ -59,4 +63,38 @@ void SmallEnemysView::onRemoveEnemy(CCObject* index)
     CCSprite* sprite = (CCSprite*)enemysArray->objectAtIndex(reIndex);
     enemysArray->removeObjectAtIndex(reIndex);
     this->removeChild(sprite);
+}
+
+//Think about the CCObject pointer index, why to use the local variable pointer
+void SmallEnemysView::onCrashEnemy(CCObject* index)
+{
+    int reIndex = *(int*)index;
+    CCSprite* sprite = (CCSprite*)enemysArray->objectAtIndex(reIndex);
+    CCArray* aniFrames = CCArray::createWithCapacity(2);
+    for(int i = 0; i<SMALL_ENEMY_BLOW_COUNT; i++)
+    {
+        char name[30] = {0};
+        sprintf(name, "enemy1_down%d.png", i+1);
+        CCSpriteFrame* spriteFrame = CCSpriteFrameCache::sharedSpriteFrameCache()->spriteFrameByName(name);
+        CC_BREAK_IF(!spriteFrame);
+        aniFrames->addObject(spriteFrame);
+    }
+    CCAnimation* animation = CCAnimation::createWithSpriteFrames(aniFrames, 0.1f);
+    CCAnimate* animate = CCAnimate::create(animation);
+    CCSequence* sequence = CCSequence::create(animate, CCCallFuncN::create(this, callfuncN_selector(SmallEnemysView::remove)), NULL);
+    sprite->runAction(sequence);
+    enemysArray->removeObjectAtIndex(reIndex);
+    //CCDirector::sharedDirector()->pause();
+}
+
+void SmallEnemysView::remove(CCNode* node)
+{
+    //CCLOG("HAHAHAH REMOVE The fucking ");
+    if(node!=0) node->removeFromParentAndCleanup(true);
+    /*
+    int reIndex = *(int*)index;
+    CCSprite* sprite = (CCSprite*)enemysArray->objectAtIndex(reIndex);
+    enemysArray->removeObjectAtIndex(reIndex);
+    this->removeChild(sprite);
+     */
 }

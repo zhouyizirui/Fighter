@@ -12,19 +12,23 @@
 #include <iostream>
 #include "cocos2d.h"
 #include "Constants.h"
+#include "ModelSize.h"
 USING_NS_CC;
 
 class EnemyPoint:public CCObject
 {
 private:
     CCPoint* point;
+    ModelSize* size;
 public:
     EnemyPoint();
     ~EnemyPoint();
     float getPointX();
     float getPointY();
-    CCPoint* getPoint();
+    CCPoint* getPosition();
+    ModelSize* getSize();
     void setPoint(float x, float y);
+    void setSize(float width, float height);
 };
 
 #endif /* defined(__Fighter__EnemyPoint__) */

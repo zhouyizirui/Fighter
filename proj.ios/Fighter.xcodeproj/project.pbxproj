@@ -278,6 +278,7 @@
 		EFDC3AB319B6088300BC8BB0 /* SmallEnemys.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDC3AB119B6088300BC8BB0 /* SmallEnemys.cpp */; };
 		EFDC3AB619B60AEF00BC8BB0 /* SmallEnemysView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDC3AB419B60AEF00BC8BB0 /* SmallEnemysView.cpp */; };
 		EFDC3AB919B7032A00BC8BB0 /* EnemyPoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDC3AB719B7032A00BC8BB0 /* EnemyPoint.cpp */; };
+		EFDC3ABF19B73A4C00BC8BB0 /* ModelSize.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDC3ABD19B73A4C00BC8BB0 /* ModelSize.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -843,6 +844,8 @@
 		EFDC3AB519B60AEF00BC8BB0 /* SmallEnemysView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmallEnemysView.h; sourceTree = "<group>"; };
 		EFDC3AB719B7032A00BC8BB0 /* EnemyPoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EnemyPoint.cpp; sourceTree = "<group>"; };
 		EFDC3AB819B7032A00BC8BB0 /* EnemyPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemyPoint.h; sourceTree = "<group>"; };
+		EFDC3ABD19B73A4C00BC8BB0 /* ModelSize.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ModelSize.cpp; sourceTree = "<group>"; };
+		EFDC3ABE19B73A4C00BC8BB0 /* ModelSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelSize.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2057,6 +2060,8 @@
 				EFDC3AB219B6088300BC8BB0 /* SmallEnemys.h */,
 				EFDC3AB719B7032A00BC8BB0 /* EnemyPoint.cpp */,
 				EFDC3AB819B7032A00BC8BB0 /* EnemyPoint.h */,
+				EFDC3ABD19B73A4C00BC8BB0 /* ModelSize.cpp */,
+				EFDC3ABE19B73A4C00BC8BB0 /* ModelSize.h */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -2269,6 +2274,7 @@
 				15A3DA411682F826002FB0C5 /* CCMenuItemLoader.cpp in Sources */,
 				15A3DA421682F826002FB0C5 /* CCNode+CCBRelativePositioning.cpp in Sources */,
 				15A3DA431682F826002FB0C5 /* CCNodeLoader.cpp in Sources */,
+				EFDC3ABF19B73A4C00BC8BB0 /* ModelSize.cpp in Sources */,
 				EFDC3AA719B4BB3900BC8BB0 /* Player.cpp in Sources */,
 				15A3DA441682F826002FB0C5 /* CCNodeLoaderLibrary.cpp in Sources */,
 				298B29C118D0668400C1920F /* ListViewReader.cpp in Sources */,

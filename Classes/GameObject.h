@@ -33,6 +33,7 @@ public:
     void collisionDetection();
     virtual ~GameObject();
     virtual bool init();
+    bool isIntersect(CCPoint* aPoint, ModelSize* aSize, CCPoint* bPoint, ModelSize* bSize);
     virtual void update(float dt);
     void onMessage(const string& msg);
 };

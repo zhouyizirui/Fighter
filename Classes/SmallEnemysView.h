@@ -22,7 +22,9 @@ public:
     ~SmallEnemysView();
     void onMoveStep();
     void onEnemyMove();
+    void remove(CCNode* node);
     void onRemoveEnemy(CCObject* index);
+    void onCrashEnemy(CCObject* index);
     void onCreateEnemy(CCObject* setPoint);
     bool init();
     CREATE_FUNC(SmallEnemysView);

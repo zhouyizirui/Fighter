@@ -21,6 +21,7 @@ public:
     bool init();
     void onMoveTo(CCObject* destPoint);
     void onBroken();
+    void remove();
     void onSetup(CCObject* setPoint);
     CREATE_FUNC(PlayerView);
 };

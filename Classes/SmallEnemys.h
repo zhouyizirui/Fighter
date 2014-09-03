@@ -13,6 +13,7 @@
 #include "cocos2d.h"
 #include "Protocols.h"
 #include "Constants.h"
+#include "EnemyPoint.h"
 
 USING_NS_CC;
 using namespace std;
@@ -21,6 +22,7 @@ class SmallEnemys:public CCObject, public Updateable
 {
 private:
     CCArray* smallEnemyArray;
+    
 public:
     SmallEnemys();
     ~SmallEnemys();
@@ -28,9 +30,11 @@ public:
     int detectBorder();
     bool init();
     void moveEnemy();
+    void hitPlayer(int index);
     void removeEnemy(int index);
     void createEnemy();
     void onMessage(const string& msg);
+    CCArray* getSmallArray();
 };
 
 #endif /* defined(__Fighter__SmallEnemys__) */
