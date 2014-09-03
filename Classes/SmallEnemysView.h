@@ -20,7 +20,9 @@ private:
 public:
     SmallEnemysView();
     ~SmallEnemysView();
+    void onMoveStep();
     void onEnemyMove();
+    void onRemoveEnemy(CCObject* index);
     void onCreateEnemy(CCObject* setPoint);
     bool init();
     CREATE_FUNC(SmallEnemysView);

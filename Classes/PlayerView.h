@@ -21,6 +21,7 @@ public:
     bool init();
     void onMoveTo(CCObject* destPoint);
     void onBroken();
+    void onSetup(CCObject* setPoint);
     CREATE_FUNC(PlayerView);
 };
 #endif /* defined(__Fighter__PlayerView__) */

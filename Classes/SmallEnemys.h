@@ -12,10 +12,12 @@
 #include <iostream>
 #include "cocos2d.h"
 #include "Protocols.h"
-#include "GameObject.h"
-USING_NS_CC;
+#include "Constants.h"
 
-class SmallEnemys:public CCObject
+USING_NS_CC;
+using namespace std;
+
+class SmallEnemys:public CCObject, public Updateable
 {
 private:
     CCArray* smallEnemyArray;
@@ -23,8 +25,10 @@ public:
     SmallEnemys();
     ~SmallEnemys();
     virtual void update(float dt);
-    void detectBorder();
+    int detectBorder();
     bool init();
+    void moveEnemy();
+    void removeEnemy(int index);
     void createEnemy();
     void onMessage(const string& msg);
 };

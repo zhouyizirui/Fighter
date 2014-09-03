@@ -14,13 +14,13 @@
 #include "Protocols.h"
 #include "Player.h"
 #include "SmallEnemys.h"
+#include "GameObject.h"
 
 class GameSceneController:public CCLayer, public GameSceneViewDelegate
 {
 private:
     GameSceneView* pView;
-    Player* pPlayer;
-    SmallEnemys* pSmallEnemys;
+    GameObject* pObject;
 public:
     GameSceneController();
     virtual ~GameSceneController();

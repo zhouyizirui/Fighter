@@ -23,9 +23,17 @@ bool PlayerView::init()
     {
         return false;
     }
-    CCSize size = CCDirector::sharedDirector()->getVisibleSize();
+    
+    CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(PlayerView::onSetup), PLANE_SET, NULL);
+    CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(PlayerView::onMoveTo), PLANE_MOVE, NULL);
+    CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(PlayerView::onBroken), PLANE_BROKEN, NULL);
+    return true;
+}
+
+void PlayerView::onSetup(CCObject* setPoint)
+{
     CCSprite::createWithSpriteFrameName("hero1.png");
-    this->setPosition(ccp(size.width/2, 100));
+    this->setPosition(*(CCPoint*)setPoint);
     
     CCArray* aniFrames = CCArray::createWithCapacity(2);
     for(int i = 0; i<PLAYER_FRAME_COUNT; i++)
@@ -39,10 +47,6 @@ bool PlayerView::init()
     CCAnimation* animation = CCAnimation::createWithSpriteFrames(aniFrames, 0.1f);
     CCAnimate* animate = CCAnimate::create(animation);
     this->runAction(CCRepeatForever::create(animate));
-    
-    CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(PlayerView::onMoveTo), PLANE_MOVE, NULL);
-    CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(PlayerView::onBroken), PLANE_BROKEN, NULL);
-    return true;
 }
 
 void PlayerView::onMoveTo(CCObject* destPoint)

@@ -12,6 +12,8 @@
 #include "cocos2d.h"
 #include "cocos-ext.h"
 #include "Protocols.h"
+#include "Player.h"
+#include "SmallEnemys.h"
 #include <iostream>
 #include <string>
 
@@ -22,8 +24,13 @@ using namespace std;
 class GameObject:public CCObject, public Updateable
 {
 private:
+    Player* player;
+    SmallEnemys* smallEnemys;
 public:
     GameObject();
+    Player* getPlayer();
+    SmallEnemys* getSmallEnemys();
+    void collisionDetection();
     virtual ~GameObject();
     virtual bool init();
     virtual void update(float dt);
