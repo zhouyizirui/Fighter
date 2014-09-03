@@ -20,3 +20,8 @@ bool GameObject::init()
 {
     return true;
 }
+
+void GameObject::update(float dt)
+{
+    
+}

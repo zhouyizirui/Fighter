@@ -42,3 +42,8 @@ void SmallEnemys::onMessage(const string& msg)
 {
     
 }
+
+void SmallEnemys::update(float dt)
+{
+    
+}

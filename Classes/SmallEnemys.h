@@ -22,6 +22,7 @@ private:
 public:
     SmallEnemys();
     ~SmallEnemys();
+    virtual void update(float dt);
     void detectBorder();
     bool init();
     void createEnemy();

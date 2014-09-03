@@ -22,3 +22,8 @@ void Player::onMessage(const string &msg)
 {
     
 }
+
+void Player::update(float dt)
+{
+    
+}

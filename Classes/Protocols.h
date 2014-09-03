@@ -27,4 +27,9 @@ public:
 	virtual void dealWithTouchBegan(CCPoint startPoint) = 0;
     virtual void dealWithTouchMove(CCPoint duraPoint) = 0;
 };
+class Updateable
+{
+public:
+    virtual void update(float dt) = 0;
+};
 #endif

@@ -1,3 +1,3 @@
 git add -A
-git commit -m "Add Enemy"
+git commit -m "Modify the interface"
 git push origin master

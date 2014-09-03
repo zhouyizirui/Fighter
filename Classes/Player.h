@@ -20,6 +20,7 @@ USING_NS_CC;
 class Player:public GameObject
 {
 public:
+    virtual void update(float dt);
     void movePosition(CCPoint destPoint);
     void onMessage(const string& msg);
 private:

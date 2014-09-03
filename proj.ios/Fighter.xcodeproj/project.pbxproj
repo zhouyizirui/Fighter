@@ -1367,8 +1367,6 @@
 				1AFAF8B416D35DE700DB1158 /* AppDelegate.h */,
 				EFDC3A7019B3176E00BC8BB0 /* GameLayer.cpp */,
 				EFDC3A7119B3176E00BC8BB0 /* GameLayer.h */,
-				EFDC3A7319B3199D00BC8BB0 /* GameObject.cpp */,
-				EFDC3A7419B3199D00BC8BB0 /* GameObject.h */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -2048,6 +2046,8 @@
 		EFDC3A8619B35C2000BC8BB0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EFDC3A7319B3199D00BC8BB0 /* GameObject.cpp */,
+				EFDC3A7419B3199D00BC8BB0 /* GameObject.h */,
 				EFDC3AA519B4BB3900BC8BB0 /* Player.cpp */,
 				EFDC3AA619B4BB3900BC8BB0 /* Player.h */,
 				EFDC3AB119B6088300BC8BB0 /* SmallEnemys.cpp */,
