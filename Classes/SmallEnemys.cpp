@@ -10,7 +10,8 @@
 #include "ModelPoint.h"
 #include "Constants.h"
 
-SmallEnemys::SmallEnemys()
+SmallEnemys::SmallEnemys():
+life(1)
 {
     
 }
@@ -37,7 +38,7 @@ void SmallEnemys::createEnemy()
     int xLocation = rand()%380+50;
     int yLocation = 800;
     CCPoint point = ccp(xLocation, yLocation);
-    ModelPoint *enemyPoint = new ModelPoint();
+    ModelPoint *enemyPoint = new ModelPoint(1);
     enemyPoint->setPoint(point.x, point.y);
     enemyPoint->setSize(SMALL_ENEMY_WIDTH, SMALL_ENEMY_HEIGHT);
     smallEnemyArray->addObject(enemyPoint);
@@ -77,8 +78,25 @@ int SmallEnemys::detectBorder()
 void SmallEnemys::hitPlayer(int index)
 {
     CCLOG("In the hit player");
-    smallEnemyArray->removeObjectAtIndex(index);
-    CCNotificationCenter::sharedNotificationCenter()->postNotification(CRASH_SMALL_ENEMY,(CCObject*)&index);
+    ModelPoint* enemy = (ModelPoint*)smallEnemyArray->objectAtIndex(index);
+    enemy->minusLife();
+    if(enemy->getLife()==0)
+    {
+        smallEnemyArray->removeObjectAtIndex(index);
+        CCNotificationCenter::sharedNotificationCenter()->postNotification(CRASH_SMALL_ENEMY,(CCObject*)&index);
+    }
+}
+
+void SmallEnemys::hitBullet(int index)
+{
+    CCLOG("In the hit bullet");
+    ModelPoint* enemy = (ModelPoint*)smallEnemyArray->objectAtIndex(index);
+    enemy->minusLife();
+    if(enemy->getLife()==0)
+    {
+        smallEnemyArray->removeObjectAtIndex(index);
+        CCNotificationCenter::sharedNotificationCenter()->postNotification(CRASH_SMALL_ENEMY,(CCObject*)&index);
+    }
 }
 
 void SmallEnemys::onMessage(const string& msg)

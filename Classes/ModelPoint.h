@@ -20,13 +20,16 @@ class ModelPoint:public CCObject
 private:
     CCPoint* point;
     ModelSize* size;
+    int life;
 public:
-    ModelPoint();
+    ModelPoint(int life);
     ~ModelPoint();
     float getPointX();
     float getPointY();
     CCPoint* getPosition();
     ModelSize* getSize();
+    void minusLife();
+    int getLife();
     void setPoint(float x, float y);
     void setSize(float width, float height);
 };

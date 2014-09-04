@@ -22,6 +22,7 @@ class SmallEnemys:public CCObject, public Updateable
 {
 private:
     CCArray* smallEnemyArray;
+    int life;
 public:
     SmallEnemys();
     ~SmallEnemys();
@@ -29,6 +30,7 @@ public:
     int detectBorder();
     bool init();
     void moveEnemy();
+    void hitBullet(int index);
     void hitPlayer(int index);
     void removeEnemy(int index);
     void createEnemy();

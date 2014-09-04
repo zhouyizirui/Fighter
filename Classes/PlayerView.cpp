@@ -68,7 +68,7 @@ void PlayerView::onBroken()
         CC_BREAK_IF(!spriteFrame);
         aniFrames->addObject(spriteFrame);
     }
-    CCAnimation* animation = CCAnimation::createWithSpriteFrames(aniFrames, 0.15f);
+    CCAnimation* animation = CCAnimation::createWithSpriteFrames(aniFrames, 0.05f);
     CCAnimate* animate = CCAnimate::create(animation);
     CCSequence* sequence = CCSequence::create(animate, CCCallFunc::create(this,callfunc_selector(PlayerView::remove)), NULL);
     this->runAction(sequence);

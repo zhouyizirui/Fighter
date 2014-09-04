@@ -26,12 +26,17 @@ bool Bullets::init()
     return true;
 }
 
+CCArray* Bullets::getBulletArray()
+{
+    return bullets;
+}
+
 void Bullets::createBullet(CCPoint playerPos)
 {
     if(bulletType==NORMAL_BULLET)
     {
         //CCLOG("The bullet position %f, %f", playerPos.x, playerPos.y+50);
-        ModelPoint* bullet = new ModelPoint();
+        ModelPoint* bullet = new ModelPoint(1);
         CCPoint point = ccp(playerPos.x, playerPos.y+50);
         bullet->setPoint(point.x, point.y);
         bullet->setSize(BULLET_WIDTH, BULLET_HEIGHT);
@@ -80,6 +85,17 @@ void Bullets::removeBullet(int index)
 {
     bullets->removeObjectAtIndex(index);
     CCNotificationCenter::sharedNotificationCenter()->postNotification(REMOVE_NORMAL_BULLET, (CCObject*)&index);
+}
+
+void Bullets::hitEnemy(int index)
+{
+    ModelPoint* bullet = (ModelPoint*)bullets->objectAtIndex(index);
+    bullet->minusLife();
+    if(bullet->getLife()==0)
+    {
+    bullets->removeObjectAtIndex(index);
+    CCNotificationCenter::sharedNotificationCenter()->postNotification(REMOVE_NORMAL_BULLET, (CCObject*)&index);
+    }
 }
 
 void Bullets::update(float dt)

@@ -8,11 +8,12 @@
 
 #include "ModelPoint.h"
 
-ModelPoint::ModelPoint()
+ModelPoint::ModelPoint(int life)
 {
     //this->point
     point = new CCPoint();
     size = new ModelSize();
+    this->life = life;
 }
 
 ModelPoint::~ModelPoint()
@@ -49,4 +50,14 @@ CCPoint* ModelPoint::getPosition()
 ModelSize* ModelPoint::getSize()
 {
     return size;
+}
+
+void ModelPoint::minusLife()
+{
+    life--;
+}
+
+int ModelPoint::getLife()
+{
+    return life;
 }

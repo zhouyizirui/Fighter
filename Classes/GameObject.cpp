@@ -76,6 +76,19 @@ void GameObject::collisionDetection()
         }
         //if(player->getPosition())
     }
+    for(int i=0; i<bullets->getBulletArray()->count(); i++)
+    {
+        ModelPoint* bullet = (ModelPoint*)bullets->getBulletArray()->objectAtIndex(i);
+        for(int j=0; j<smallEnemys->getSmallArray()->count(); j++)
+        {
+            ModelPoint* smallEnemy = (ModelPoint*)smallEnemys->getSmallArray()->objectAtIndex(j);
+            if(isIntersect(bullet->getPosition(), bullet->getSize(), smallEnemy->getPosition(), smallEnemy->getSize()))
+            {
+                bullets->hitEnemy(i);
+                smallEnemys->hitBullet(j);
+            }
+        }
+    }
 }
 
 void GameObject::update(float dt)
