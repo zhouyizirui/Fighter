@@ -58,7 +58,7 @@ void SmallEnemysView::onMoveStep()
 
 void SmallEnemysView::onRemoveEnemy(CCObject* index)
 {
-    CCLOG("Remove it!");
+    //CCLOG("Remove it!");
     int reIndex = *(int*)index;
     CCSprite* sprite = (CCSprite*)enemysArray->objectAtIndex(reIndex);
     enemysArray->removeObjectAtIndex(reIndex);

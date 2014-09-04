@@ -1,3 +1,3 @@
 git add -A
-git commit -m "Add bullets"
+git commit -m "Fix bullets bugs"
 git push origin master

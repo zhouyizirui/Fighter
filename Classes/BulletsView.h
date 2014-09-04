@@ -24,7 +24,7 @@ public:
     bool init();
     void onCreateBullet();
     void onMoveStep();
-    void onRemoveEnemy(CCObject * index);
+    void onRemoveBullet(CCObject * index);
     void onCreateBullet(CCObject* setPoint);
     CREATE_FUNC(BulletsView);
 };

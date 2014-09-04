@@ -23,7 +23,7 @@ GameSceneController::~GameSceneController()
 
 void GameSceneController::createEnemys()
 {
-    CCLOG("Create a enemy!");
+    //CCLOG("Create a enemy!");
     pObject->getSmallEnemys()->createEnemy();
     //pSmallEnemys->createEnemy();
 }
@@ -63,7 +63,7 @@ bool GameSceneController::init()
         
         this->addChild(pView, 0);
         this->schedule(schedule_selector(GameSceneController::update));
-        this->schedule(schedule_selector(GameSceneController::createBullets), 0.4);
+        this->schedule(schedule_selector(GameSceneController::createBullets), 0.15f);
         this->schedule(schedule_selector(GameSceneController::createEnemys), 2);
     }
     return true;

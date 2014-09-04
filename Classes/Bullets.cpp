@@ -30,12 +30,13 @@ void Bullets::createBullet(CCPoint playerPos)
 {
     if(bulletType==NORMAL_BULLET)
     {
-        CCLOG("The bullet position %f, %f", playerPos.x, playerPos.y+50);
+        //CCLOG("The bullet position %f, %f", playerPos.x, playerPos.y+50);
         ModelPoint* bullet = new ModelPoint();
         CCPoint point = ccp(playerPos.x, playerPos.y+50);
         bullet->setPoint(point.x, point.y);
-        bullet->setSize(BULLET_WIDTH, BuLLET_HEIGHT);
+        bullet->setSize(BULLET_WIDTH, BULLET_HEIGHT);
         bullets->addObject(bullet);
+        CCLOG("The number of bullets in createBullet %d", bullets->count());
         CCNotificationCenter::sharedNotificationCenter()->postNotification(ADD_NORMAL_BULLET, (CCObject*)&point);
     }
     else
@@ -46,11 +47,11 @@ void Bullets::createBullet(CCPoint playerPos)
 
 void Bullets::moveBullet()
 {
-    //CCLOG("The number of enmey %d", smallEnemyArray->count());
+    //CCLOG("The number of bullets in moveBullet %d", bullets->count());
     for(int i=0; i<bullets->count(); i++)
     {
         ModelPoint* bullet = (ModelPoint*)bullets->objectAtIndex(i);
-        bullet->setPoint(bullet->getPointX(), bullet->getPointY()-FRAME_INTERVAL*SMALL_ENEMY_SPEED);
+        bullet->setPoint(bullet->getPointX(), bullet->getPointY()+FRAME_INTERVAL*BULLET_SPEED);
     }
     CCNotificationCenter::sharedNotificationCenter()->postNotification(MOVE_NORMAL_BULLET);
     int removeIndex = detectBorder();
@@ -60,10 +61,17 @@ void Bullets::moveBullet()
 int Bullets::detectBorder()
 {
     int i=0;
+    CCSize size = CCDirector::sharedDirector()->getVisibleSize();
+    //CCLOG("The number of bullets in detectBorder %d", bullets->count());
     for(i=0; i<bullets->count(); i++)
     {
         ModelPoint* bullet = (ModelPoint*)bullets->objectAtIndex(i);
-        if(bullet->getPointY()>800) return i;
+        if(bullet->getPointY()>size.height)
+        {
+            CCLOG("The size of the height %f", size.height);
+            CCLOG("Bullet exceeds the border");
+            return i;
+        }
     }
     return -1;
 }

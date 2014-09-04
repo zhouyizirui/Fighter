@@ -20,11 +20,12 @@ BulletsView::~BulletsView()
 
 bool BulletsView::init()
 {
+    //CCLOG("In the bullets View");
     bulletsArray = CCArray::create();
     bulletsArray->retain();
     CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(BulletsView::onCreateBullet), ADD_NORMAL_BULLET, NULL);
     CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(BulletsView::onMoveStep), MOVE_NORMAL_BULLET, NULL);
-    CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(BulletsView::onRemoveEnemy), REMOVE_NORMAL_BULLET, NULL);
+    CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(BulletsView::onRemoveBullet), REMOVE_NORMAL_BULLET, NULL);
     return true;
 }
 
@@ -35,7 +36,7 @@ void BulletsView::onCreateBullet(CCObject* setPoint)
     bulletsArray->addObject(sprite);
     CCPoint startPoint = *(CCPoint*)setPoint;
     sprite->setPosition(startPoint);
-    CCLOG("In the view create function %f, %f", startPoint.x, startPoint.y);
+    //CCLOG("In the view create function %f, %f", startPoint.x, startPoint.y);
     //CCMoveTo* moveTo = CCMoveTo::create(SMALL_ENEMY_SPEED, ccp(startPoint.x, -1));
     //sprite->runAction(moveTo);
     this->addChild(sprite);
@@ -51,8 +52,9 @@ void BulletsView::onMoveStep()
     }
 }
 
-void BulletsView::onRemoveEnemy(CCObject * index)
+void BulletsView::onRemoveBullet(CCObject * index)
 {
+    CCLOG("Remove the bullet");
     int reIndex = *(int*)index;
     CCSprite* sprite = (CCSprite*)bulletsArray->objectAtIndex(reIndex);
     bulletsArray->removeObjectAtIndex(reIndex);
