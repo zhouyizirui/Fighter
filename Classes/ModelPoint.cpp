@@ -6,47 +6,47 @@
 //
 //
 
-#include "EnemyPoint.h"
+#include "ModelPoint.h"
 
-EnemyPoint::EnemyPoint()
+ModelPoint::ModelPoint()
 {
     //this->point
     point = new CCPoint();
     size = new ModelSize();
 }
 
-EnemyPoint::~EnemyPoint()
+ModelPoint::~ModelPoint()
 {
     CC_SAFE_DELETE(point);
     CC_SAFE_DELETE(size);
 }
 
-void EnemyPoint::setPoint(float x, float y)
+void ModelPoint::setPoint(float x, float y)
 {
     point->setPoint(x, y);
 }
 
-void EnemyPoint::setSize(float width, float height)
+void ModelPoint::setSize(float width, float height)
 {
     size->setSize(width, height);
 }
 
-float EnemyPoint::getPointX()
+float ModelPoint::getPointX()
 {
     return point->x;
 }
 
-float EnemyPoint::getPointY()
+float ModelPoint::getPointY()
 {
     return point->y;
 }
 
-CCPoint* EnemyPoint::getPosition()
+CCPoint* ModelPoint::getPosition()
 {
     return point;
 }
 
-ModelSize* EnemyPoint::getSize()
+ModelSize* ModelPoint::getSize()
 {
     return size;
 }

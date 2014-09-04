@@ -17,20 +17,26 @@
 #define PLANE_BROKEN "Broken"
 
 #define ADD_SMALL_ENEMY "AddSmallEnemy"
-#define SMALL_ENEMY_MOVE "SmallEnemyMove"
-#define REMOVE_ENEMY "RemoveEnemy"
-#define CRASH_ENEMY "CrashEnemy"
+#define MOVE_SMALL_ENEMY "SmallEnemyMove"
+#define REMOVE_SMALL_ENEMY "RemoveEnemy"
+#define CRASH_SMALL_ENEMY "CrashEnemy"
+#define ADD_NORMAL_BULLET "AddNormalBullet"
+#define MOVE_NORMAL_BULLET "NormalBulletMove"
+#define REMOVE_NORMAL_BULLET "RemoveNormalBullet"
 
 #define FRAME_INTERVAL 0.017
 
 #define SMALL_ENEMY_SPEED 160
 #define MIDDLE_ENEMY_SPEED 130
 #define BIG_ENEMY_SPEED 100
+#define BULLET_SPEED 300
 
 #define SMALL_ENEMY_WIDTH 57
 #define SMALL_ENEMY_HEIGHT 53
 #define PLAYER_WIDTH 70
 #define PLAYER_HEIGHT 100
+#define BULLET_WIDTH 5
+#define BuLLET_HEIGHT 20
 
 #define PLAYER_FRAME_COUNT 2
 #define PLAYER_BLOW_COUNT 4
@@ -40,6 +46,11 @@ enum PLAYER_STATE{
     PLAYER_STABLE = 1,
     PLAYER_MOVE,
     PLAYER_CRASH
+};
+
+enum BULLET_TYPE{
+    NORMAL_BULLET = 1,
+    SUPER_BULLET = 2
 };
 
 

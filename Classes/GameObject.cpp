@@ -16,6 +16,7 @@ GameObject::~GameObject()
 {
     CC_SAFE_RELEASE(player);
     CC_SAFE_RELEASE(smallEnemys);
+    CC_SAFE_RELEASE(bullets);
 }
 
 bool GameObject::init()
@@ -26,6 +27,10 @@ bool GameObject::init()
     smallEnemys = new SmallEnemys();
     smallEnemys->init();
     smallEnemys->retain();
+    
+    bullets = new Bullets();
+    bullets->init();
+    bullets->retain();
     
     return true;
 }
@@ -40,6 +45,10 @@ SmallEnemys* GameObject::getSmallEnemys()
     return smallEnemys;
 }
 
+Bullets* GameObject::getBullets()
+{
+    return bullets;
+}
 
 bool GameObject::isIntersect(CCPoint* aPoint, ModelSize* aSize, CCPoint* bPoint, ModelSize* bSize)
 {
@@ -54,7 +63,7 @@ void GameObject::collisionDetection()
 {
     for(int i=0; i<smallEnemys->getSmallArray()->count(); i++)
     {
-        EnemyPoint* enemy = (EnemyPoint*)smallEnemys->getSmallArray()->objectAtIndex(i);
+        ModelPoint* enemy = (ModelPoint*)smallEnemys->getSmallArray()->objectAtIndex(i);
         //CCLOG("enemy size %f, %f", enemy->getSize()->getWidth(), enemy->getSize()->getHeight());
         //CCLOG("HAHAHHA enemy point %f, %f", enemy->getPosition()->x, enemy->getPosition()->y);
         //CCLOG("Player point %f, %f", player->getPosition()->x, player->getPosition()->y);
@@ -73,5 +82,6 @@ void GameObject::update(float dt)
 {
     player->update(dt);
     smallEnemys->update(dt);
+    bullets->update(dt);
     collisionDetection();
 }

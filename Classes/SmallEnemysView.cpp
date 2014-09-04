@@ -26,9 +26,9 @@ bool SmallEnemysView::init()
     enemysArray = CCArray::create();
     enemysArray->retain();
     CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(SmallEnemysView::onCreateEnemy), ADD_SMALL_ENEMY, NULL);
-    CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(SmallEnemysView::onMoveStep), SMALL_ENEMY_MOVE, NULL);
-    CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(SmallEnemysView::onRemoveEnemy), REMOVE_ENEMY, NULL);
-    CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(SmallEnemysView::onCrashEnemy), CRASH_ENEMY, NULL);
+    CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(SmallEnemysView::onMoveStep), MOVE_SMALL_ENEMY, NULL);
+    CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(SmallEnemysView::onRemoveEnemy), REMOVE_SMALL_ENEMY, NULL);
+    CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(SmallEnemysView::onCrashEnemy), CRASH_SMALL_ENEMY, NULL);
     return true;
 }
 
@@ -39,8 +39,8 @@ void SmallEnemysView::onCreateEnemy(CCObject* setPoint)
     enemysArray->addObject(sprite);
     CCPoint startPoint = *(CCPoint*)setPoint;
     sprite->setPosition(startPoint);
-    CCMoveTo* moveTo = CCMoveTo::create(SMALL_ENEMY_SPEED, ccp(startPoint.x, -1));
-    sprite->runAction(moveTo);
+    //CCMoveTo* moveTo = CCMoveTo::create(SMALL_ENEMY_SPEED, ccp(startPoint.x, -1));
+    //sprite->runAction(moveTo);
     this->addChild(sprite);
 }
 

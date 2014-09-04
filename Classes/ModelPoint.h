@@ -15,14 +15,14 @@
 #include "ModelSize.h"
 USING_NS_CC;
 
-class EnemyPoint:public CCObject
+class ModelPoint:public CCObject
 {
 private:
     CCPoint* point;
     ModelSize* size;
 public:
-    EnemyPoint();
-    ~EnemyPoint();
+    ModelPoint();
+    ~ModelPoint();
     float getPointX();
     float getPointY();
     CCPoint* getPosition();

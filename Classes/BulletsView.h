@@ -11,6 +11,7 @@
 
 #include <iostream>
 #include "cocos2d.h"
+#include "Constants.h"
 USING_NS_CC;
 
 class BulletsView:public CCLayer
@@ -21,6 +22,10 @@ public:
     BulletsView();
     ~BulletsView();
     bool init();
+    void onCreateBullet();
+    void onMoveStep();
+    void onRemoveEnemy(CCObject * index);
+    void onCreateBullet(CCObject* setPoint);
     CREATE_FUNC(BulletsView);
 };
 

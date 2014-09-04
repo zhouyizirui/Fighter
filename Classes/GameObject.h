@@ -13,6 +13,7 @@
 #include "cocos-ext.h"
 #include "Protocols.h"
 #include "Player.h"
+#include "Bullets.h"
 #include "SmallEnemys.h"
 #include <iostream>
 #include <string>
@@ -26,10 +27,12 @@ class GameObject:public CCObject, public Updateable
 private:
     Player* player;
     SmallEnemys* smallEnemys;
+    Bullets* bullets;
 public:
     GameObject();
     Player* getPlayer();
     SmallEnemys* getSmallEnemys();
+    Bullets* getBullets();
     void collisionDetection();
     virtual ~GameObject();
     virtual bool init();

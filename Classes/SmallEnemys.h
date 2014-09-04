@@ -13,7 +13,7 @@
 #include "cocos2d.h"
 #include "Protocols.h"
 #include "Constants.h"
-#include "EnemyPoint.h"
+#include "ModelPoint.h"
 
 USING_NS_CC;
 using namespace std;
@@ -22,7 +22,6 @@ class SmallEnemys:public CCObject, public Updateable
 {
 private:
     CCArray* smallEnemyArray;
-    
 public:
     SmallEnemys();
     ~SmallEnemys();

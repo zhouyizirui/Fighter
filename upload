@@ -1,3 +1,3 @@
 git add -A
-git commit -m "Add the crash effect"
+git commit -m "Add bullets"
 git push origin master

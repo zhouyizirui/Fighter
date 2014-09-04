@@ -28,6 +28,13 @@ void GameSceneController::createEnemys()
     //pSmallEnemys->createEnemy();
 }
 
+void GameSceneController::createBullets()
+{
+    CCLOG("Create a bullet!");
+    CCPoint point = *(pObject->getPlayer()->getPosition());
+    pObject->getBullets()->createBullet(point);
+}
+
 void GameSceneController::update(float dt)
 {
     pObject->update(dt);
@@ -56,6 +63,7 @@ bool GameSceneController::init()
         
         this->addChild(pView, 0);
         this->schedule(schedule_selector(GameSceneController::update));
+        this->schedule(schedule_selector(GameSceneController::createBullets), 0.4);
         this->schedule(schedule_selector(GameSceneController::createEnemys), 2);
     }
     return true;

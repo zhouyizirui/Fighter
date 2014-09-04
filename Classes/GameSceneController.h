@@ -30,6 +30,7 @@ public:
     virtual bool init();
     void update(float dt);
     void createEnemys();
+    void createBullets();
     CREATE_FUNC(GameSceneController);
 };
 #endif /* defined(__Fighter__GameSceneController__) */
