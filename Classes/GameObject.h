@@ -15,6 +15,7 @@
 #include "Player.h"
 #include "Bullets.h"
 #include "SmallEnemys.h"
+#include "MiddleEnemys.h"
 #include <iostream>
 #include <string>
 
@@ -27,11 +28,13 @@ class GameObject:public CCObject, public Updateable
 private:
     Player* player;
     SmallEnemys* smallEnemys;
+    MiddleEnemys* middleEnemys;
     Bullets* bullets;
 public:
     GameObject();
     Player* getPlayer();
     SmallEnemys* getSmallEnemys();
+    MiddleEnemys* getMiddleEnemys();
     Bullets* getBullets();
     void collisionDetection();
     virtual ~GameObject();

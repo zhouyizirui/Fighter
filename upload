@@ -1,3 +1,3 @@
 git add -A
-git commit -m "Adjust bullets speed"
+git commit -m "Add middle enemy"
 git push origin master

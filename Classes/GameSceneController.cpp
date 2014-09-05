@@ -16,16 +16,22 @@ GameSceneController::~GameSceneController()
 {
     CC_SAFE_RELEASE(pView);
     CC_SAFE_RELEASE(pObject);
+    this->unscheduleAllSelectors();
     //CC_SAFE_RELEASE(pPlayer);
     //CC_SAFE_RELEASE(pSmallEnemys);
     
 }
 
-void GameSceneController::createEnemys()
+void GameSceneController::createSmallEnemys()
 {
     //CCLOG("Create a enemy!");
     pObject->getSmallEnemys()->createEnemy();
     //pSmallEnemys->createEnemy();
+}
+
+void GameSceneController::createMiddleEnemys()
+{
+    pObject->getMiddleEnemys()->createEnemy();
 }
 
 void GameSceneController::createBullets()
@@ -64,7 +70,8 @@ bool GameSceneController::init()
         this->addChild(pView, 0);
         this->schedule(schedule_selector(GameSceneController::update));
         this->schedule(schedule_selector(GameSceneController::createBullets), 0.15f);
-        this->schedule(schedule_selector(GameSceneController::createEnemys), 0.5f);
+        this->schedule(schedule_selector(GameSceneController::createSmallEnemys), 0.5f);
+        this->schedule(schedule_selector(GameSceneController::createMiddleEnemys), 3.0f);
     }
     return true;
 }

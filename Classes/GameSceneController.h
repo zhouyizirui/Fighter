@@ -29,7 +29,8 @@ public:
     virtual void dealWithTouchMove(CCPoint duraPoint);
     virtual bool init();
     void update(float dt);
-    void createEnemys();
+    void createMiddleEnemys();
+    void createSmallEnemys();
     void createBullets();
     CREATE_FUNC(GameSceneController);
 };

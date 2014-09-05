@@ -9,6 +9,7 @@
 #include "GameSceneView.h"
 #include "Constants.h"
 
+
 bool GameSceneView::init()
 {
     if(!CCLayer::init())
@@ -21,6 +22,7 @@ bool GameSceneView::init()
     makePlayer();
     makeBackground();
     makeSmallEnemys();
+    makeMiddleEnemys();
     makeBullets();
     
     setTouchEnabled(true);
@@ -46,6 +48,12 @@ void GameSceneView::makeSmallEnemys()
 {
     pSmallEnemys = SmallEnemysView::create();
     this->addChild(pSmallEnemys, 1);
+}
+
+void GameSceneView::makeMiddleEnemys()
+{
+    pMiddleEnemys = MiddleEnemysView::create();
+    this->addChild(pMiddleEnemys, 1);
 }
 
 void GameSceneView::makeBullets()

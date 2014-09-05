@@ -15,6 +15,7 @@
 #include "PlayerView.h"
 #include "BackgroundView.h"
 #include "SmallEnemysView.h"
+#include "MiddleEnemysView.h"
 #include "BulletsView.h"
 USING_NS_CC;
 
@@ -23,6 +24,7 @@ class GameSceneView:public CCLayer
 private:
     PlayerView* pPlayer;
     SmallEnemysView* pSmallEnemys;
+    MiddleEnemysView* pMiddleEnemys;
     BackgroundView* pBackground;
     BulletsView* pBullets;
     GameSceneViewDelegate* pDelegate;
@@ -35,6 +37,7 @@ public:
     void makeBackground();
     void makePlayer();
     void makeSmallEnemys();
+    void makeMiddleEnemys();
     void makeBullets();
     virtual bool ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent);
     virtual void ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent);

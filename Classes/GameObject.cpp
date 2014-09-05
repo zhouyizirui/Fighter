@@ -16,6 +16,7 @@ GameObject::~GameObject()
 {
     CC_SAFE_RELEASE(player);
     CC_SAFE_RELEASE(smallEnemys);
+    CC_SAFE_RELEASE(middleEnemys);
     CC_SAFE_RELEASE(bullets);
 }
 
@@ -27,6 +28,10 @@ bool GameObject::init()
     smallEnemys = new SmallEnemys();
     smallEnemys->init();
     smallEnemys->retain();
+    
+    middleEnemys = new MiddleEnemys();
+    middleEnemys->init();
+    middleEnemys->retain();
     
     bullets = new Bullets();
     bullets->init();
@@ -43,6 +48,11 @@ Player* GameObject::getPlayer()
 SmallEnemys* GameObject::getSmallEnemys()
 {
     return smallEnemys;
+}
+
+MiddleEnemys* GameObject::getMiddleEnemys()
+{
+    return middleEnemys;
 }
 
 Bullets* GameObject::getBullets()
@@ -76,6 +86,21 @@ void GameObject::collisionDetection()
         }
         //if(player->getPosition())
     }
+    for(int i=0; i<middleEnemys->getMiddleArray()->count(); i++)
+    {
+        ModelPoint* enemy = (ModelPoint*)middleEnemys->getMiddleArray()->objectAtIndex(i);
+        //CCLOG("enemy size %f, %f", enemy->getSize()->getWidth(), enemy->getSize()->getHeight());
+        //CCLOG("HAHAHHA enemy point %f, %f", enemy->getPosition()->x, enemy->getPosition()->y);
+        //CCLOG("Player point %f, %f", player->getPosition()->x, player->getPosition()->y);
+        if(isIntersect(enemy->getPosition(), enemy->getSize(), player->getPosition(), player->getSize()))
+        {
+            //CCDirector::sharedDirector()->pause();
+            player->hitEnemy();
+            middleEnemys->hitPlayer(i);
+            break;
+        }
+        //if(player->getPosition())
+    }
     for(int i=0; i<bullets->getBulletArray()->count(); i++)
     {
         ModelPoint* bullet = (ModelPoint*)bullets->getBulletArray()->objectAtIndex(i);
@@ -86,6 +111,17 @@ void GameObject::collisionDetection()
             {
                 bullets->hitEnemy(i);
                 smallEnemys->hitBullet(j);
+                break;
+            }
+        }
+        for(int j=0; j<middleEnemys->getMiddleArray()->count(); j++)
+        {
+            ModelPoint* middleEnemy = (ModelPoint*)middleEnemys->getMiddleArray()->objectAtIndex(j);
+            if(isIntersect(bullet->getPosition(), bullet->getSize(), middleEnemy->getPosition(), middleEnemy->getSize()))
+            {
+                bullets->hitEnemy(i);
+                middleEnemys->hitBullet(j);
+                break;
             }
         }
     }
@@ -95,6 +131,7 @@ void GameObject::update(float dt)
 {
     player->update(dt);
     smallEnemys->update(dt);
+    middleEnemys->update(dt);
     bullets->update(dt);
     collisionDetection();
 }

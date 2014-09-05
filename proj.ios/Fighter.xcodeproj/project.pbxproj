@@ -280,6 +280,8 @@
 		EFDC3ABF19B73A4C00BC8BB0 /* ModelSize.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDC3ABD19B73A4C00BC8BB0 /* ModelSize.cpp */; };
 		EFDC3AC219B895E200BC8BB0 /* Bullets.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDC3AC019B895E200BC8BB0 /* Bullets.cpp */; };
 		EFDC3AC519B89BE200BC8BB0 /* ModelPoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDC3AC319B89BE200BC8BB0 /* ModelPoint.cpp */; };
+		EFDC3AC819B9CB5000BC8BB0 /* MiddleEnemys.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDC3AC619B9CB5000BC8BB0 /* MiddleEnemys.cpp */; };
+		EFDC3ACB19B9D10F00BC8BB0 /* MiddleEnemysView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDC3AC919B9D10F00BC8BB0 /* MiddleEnemysView.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -849,6 +851,10 @@
 		EFDC3AC119B895E200BC8BB0 /* Bullets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bullets.h; sourceTree = "<group>"; };
 		EFDC3AC319B89BE200BC8BB0 /* ModelPoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ModelPoint.cpp; sourceTree = "<group>"; };
 		EFDC3AC419B89BE200BC8BB0 /* ModelPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelPoint.h; sourceTree = "<group>"; };
+		EFDC3AC619B9CB5000BC8BB0 /* MiddleEnemys.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MiddleEnemys.cpp; sourceTree = "<group>"; };
+		EFDC3AC719B9CB5000BC8BB0 /* MiddleEnemys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiddleEnemys.h; sourceTree = "<group>"; };
+		EFDC3AC919B9D10F00BC8BB0 /* MiddleEnemysView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MiddleEnemysView.cpp; sourceTree = "<group>"; };
+		EFDC3ACA19B9D10F00BC8BB0 /* MiddleEnemysView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiddleEnemysView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2028,6 +2034,8 @@
 				EFDC3AAF19B603D000BC8BB0 /* BulletsView.h */,
 				EFDC3AB419B60AEF00BC8BB0 /* SmallEnemysView.cpp */,
 				EFDC3AB519B60AEF00BC8BB0 /* SmallEnemysView.h */,
+				EFDC3AC919B9D10F00BC8BB0 /* MiddleEnemysView.cpp */,
+				EFDC3ACA19B9D10F00BC8BB0 /* MiddleEnemysView.h */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -2063,6 +2071,8 @@
 				EFDC3AC119B895E200BC8BB0 /* Bullets.h */,
 				EFDC3AB119B6088300BC8BB0 /* SmallEnemys.cpp */,
 				EFDC3AB219B6088300BC8BB0 /* SmallEnemys.h */,
+				EFDC3AC619B9CB5000BC8BB0 /* MiddleEnemys.cpp */,
+				EFDC3AC719B9CB5000BC8BB0 /* MiddleEnemys.h */,
 				EFDC3AC319B89BE200BC8BB0 /* ModelPoint.cpp */,
 				EFDC3AC419B89BE200BC8BB0 /* ModelPoint.h */,
 				EFDC3ABD19B73A4C00BC8BB0 /* ModelSize.cpp */,
@@ -2260,6 +2270,7 @@
 				15A3DA321682F826002FB0C5 /* CCBFileLoader.cpp in Sources */,
 				15A3DA331682F826002FB0C5 /* CCBKeyframe.cpp in Sources */,
 				15A3DA341682F826002FB0C5 /* CCBReader.cpp in Sources */,
+				EFDC3ACB19B9D10F00BC8BB0 /* MiddleEnemysView.cpp in Sources */,
 				15A3DA351682F826002FB0C5 /* CCBSequence.cpp in Sources */,
 				15A3DA361682F826002FB0C5 /* CCBSequenceProperty.cpp in Sources */,
 				46513EB1187BFBA200B5ABE1 /* UITouchGroup.cpp in Sources */,
@@ -2396,6 +2407,7 @@
 				379BB9BD17F03F3700829B88 /* UIListView.cpp in Sources */,
 				379BB9BE17F03F3700829B88 /* UIPageView.cpp in Sources */,
 				379BB9BF17F03F3700829B88 /* UIScrollView.cpp in Sources */,
+				EFDC3AC819B9CB5000BC8BB0 /* MiddleEnemys.cpp in Sources */,
 				379BB9C017F03F3700829B88 /* UIButton.cpp in Sources */,
 				375BD50E1868454E0024609E /* CCActionEaseEx.cpp in Sources */,
 				379BB9C117F03F3700829B88 /* UICheckBox.cpp in Sources */,
