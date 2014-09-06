@@ -71,10 +71,8 @@ int Bullets::detectBorder()
     for(i=0; i<bullets->count(); i++)
     {
         ModelPoint* bullet = (ModelPoint*)bullets->objectAtIndex(i);
-        if(bullet->getPointY()>size.height-80)
+        if(bullet->getPointY()>size.height-60)
         {
-            CCLOG("The size of the height %f", size.height);
-            CCLOG("Bullet exceeds the border");
             return i;
         }
     }

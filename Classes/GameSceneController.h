@@ -31,6 +31,7 @@ public:
     void update(float dt);
     void createMiddleEnemys();
     void createSmallEnemys();
+    void createBigEnemys();
     void createBullets();
     CREATE_FUNC(GameSceneController);
 };

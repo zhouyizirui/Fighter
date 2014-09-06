@@ -1,13 +1,13 @@
 //
-//  MiddleEnemys.h
+//  BigEnemys.h
 //  Fighter
 //
-//  Created by zhouyizirui on 9/5/14.
+//  Created by zhouyizirui on 9/6/14.
 //
 //
 
-#ifndef __Fighter__MiddleEnemys__
-#define __Fighter__MiddleEnemys__
+#ifndef __Fighter__BigEnemys__
+#define __Fighter__BigEnemys__
 
 #include <iostream>
 #include "cocos2d.h"
@@ -18,13 +18,13 @@
 USING_NS_CC;
 using namespace std;
 
-class MiddleEnemys:public CCObject, public Updateable
+class BigEnemys:public CCObject, public Updateable
 {
 private:
-    CCArray* middleEnemyArray;
+    CCArray* bigEnemyArray;
 public:
-    MiddleEnemys();
-    ~MiddleEnemys();
+    BigEnemys();
+    ~BigEnemys();
     virtual void update(float dt);
     int detectBorder();
     bool init();
@@ -34,7 +34,7 @@ public:
     void removeEnemy(int index);
     void createEnemy();
     void onMessage(const string& msg);
-    CCArray* getMiddleArray();
+    CCArray* getBigArray();
 };
 
-#endif /* defined(__Fighter__MiddleEnemys__) */
+#endif /* defined(__Fighter__BigEnemys__) */

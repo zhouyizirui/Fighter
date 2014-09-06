@@ -259,6 +259,8 @@
 		D4EF949C15BD2D8E00D803EB /* Icon-114.png in Resources */ = {isa = PBXBuildFile; fileRef = D4EF949B15BD2D8E00D803EB /* Icon-114.png */; };
 		D4EF949E15BD2D9600D803EB /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = D4EF949D15BD2D9600D803EB /* Icon-72.png */; };
 		D4EF94A015BD2D9800D803EB /* Icon-144.png in Resources */ = {isa = PBXBuildFile; fileRef = D4EF949F15BD2D9800D803EB /* Icon-144.png */; };
+		EF41984D19BAC00700DB0BEE /* BigEnemysView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF41984B19BAC00700DB0BEE /* BigEnemysView.cpp */; };
+		EF787B0F19BA30F600A08856 /* BigEnemys.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF787B0D19BA30F600A08856 /* BigEnemys.cpp */; };
 		EFDC3A7219B3176E00BC8BB0 /* GameLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDC3A7019B3176E00BC8BB0 /* GameLayer.cpp */; };
 		EFDC3A7519B3199D00BC8BB0 /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDC3A7319B3199D00BC8BB0 /* GameObject.cpp */; };
 		EFDC3A8C19B35E9000BC8BB0 /* backgrounds.plist in Resources */ = {isa = PBXBuildFile; fileRef = EFDC3A8A19B35E9000BC8BB0 /* backgrounds.plist */; };
@@ -813,6 +815,10 @@
 		D4EF949D15BD2D9600D803EB /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "../proj.ios/Icon-72.png"; sourceTree = "<group>"; };
 		D4EF949F15BD2D9800D803EB /* Icon-144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-144.png"; path = "../proj.ios/Icon-144.png"; sourceTree = "<group>"; };
 		D4F9F37B12E54555005CA6D2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
+		EF41984B19BAC00700DB0BEE /* BigEnemysView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BigEnemysView.cpp; sourceTree = "<group>"; };
+		EF41984C19BAC00700DB0BEE /* BigEnemysView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigEnemysView.h; sourceTree = "<group>"; };
+		EF787B0D19BA30F600A08856 /* BigEnemys.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BigEnemys.cpp; sourceTree = "<group>"; };
+		EF787B0E19BA30F600A08856 /* BigEnemys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigEnemys.h; sourceTree = "<group>"; };
 		EFDC3A7019B3176E00BC8BB0 /* GameLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameLayer.cpp; sourceTree = "<group>"; };
 		EFDC3A7119B3176E00BC8BB0 /* GameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameLayer.h; sourceTree = "<group>"; };
 		EFDC3A7319B3199D00BC8BB0 /* GameObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameObject.cpp; sourceTree = "<group>"; };
@@ -2036,6 +2042,8 @@
 				EFDC3AB519B60AEF00BC8BB0 /* SmallEnemysView.h */,
 				EFDC3AC919B9D10F00BC8BB0 /* MiddleEnemysView.cpp */,
 				EFDC3ACA19B9D10F00BC8BB0 /* MiddleEnemysView.h */,
+				EF41984B19BAC00700DB0BEE /* BigEnemysView.cpp */,
+				EF41984C19BAC00700DB0BEE /* BigEnemysView.h */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -2073,6 +2081,8 @@
 				EFDC3AB219B6088300BC8BB0 /* SmallEnemys.h */,
 				EFDC3AC619B9CB5000BC8BB0 /* MiddleEnemys.cpp */,
 				EFDC3AC719B9CB5000BC8BB0 /* MiddleEnemys.h */,
+				EF787B0D19BA30F600A08856 /* BigEnemys.cpp */,
+				EF787B0E19BA30F600A08856 /* BigEnemys.h */,
 				EFDC3AC319B89BE200BC8BB0 /* ModelPoint.cpp */,
 				EFDC3AC419B89BE200BC8BB0 /* ModelPoint.h */,
 				EFDC3ABD19B73A4C00BC8BB0 /* ModelSize.cpp */,
@@ -2237,6 +2247,7 @@
 				EFDC3AB619B60AEF00BC8BB0 /* SmallEnemysView.cpp in Sources */,
 				15A3D9951682F7F9002FB0C5 /* chipmunk.c in Sources */,
 				15A3D9971682F7F9002FB0C5 /* cpConstraint.c in Sources */,
+				EF41984D19BAC00700DB0BEE /* BigEnemysView.cpp in Sources */,
 				15A3D9981682F7F9002FB0C5 /* cpDampedRotarySpring.c in Sources */,
 				15A3D9991682F7F9002FB0C5 /* cpDampedSpring.c in Sources */,
 				15A3D99A1682F7F9002FB0C5 /* cpGearJoint.c in Sources */,
@@ -2250,6 +2261,7 @@
 				15A3D9A01682F7F9002FB0C5 /* cpSimpleMotor.c in Sources */,
 				15A3D9A11682F7F9002FB0C5 /* cpSlideJoint.c in Sources */,
 				15A3D9A21682F7F9002FB0C5 /* cpArbiter.c in Sources */,
+				EF787B0F19BA30F600A08856 /* BigEnemys.cpp in Sources */,
 				15A3D9A31682F7F9002FB0C5 /* cpArray.c in Sources */,
 				15A3D9A41682F7F9002FB0C5 /* cpBB.c in Sources */,
 				15A3D9A51682F7F9002FB0C5 /* cpBBTree.c in Sources */,

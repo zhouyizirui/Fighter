@@ -70,7 +70,7 @@ void SmallEnemysView::onCrashEnemy(CCObject* index)
 {
     int reIndex = *(int*)index;
     CCSprite* sprite = (CCSprite*)enemysArray->objectAtIndex(reIndex);
-    CCArray* aniFrames = CCArray::createWithCapacity(2);
+    CCArray* aniFrames = CCArray::createWithCapacity(SMALL_ENEMY_BLOW_COUNT);
     for(int i = 0; i<SMALL_ENEMY_BLOW_COUNT; i++)
     {
         char name[30] = {0};

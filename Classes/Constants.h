@@ -25,6 +25,11 @@
 #define REMOVE_MIDDLE_ENEMY "RemoveMiddleEnemy"
 #define CRASH_MIDDLE_ENEMY "CrashMiddleEnemy"
 #define HIT_MIDDLE_ENEMY "HitMiddleEnemy"
+#define ADD_BIG_ENEMY "AddBigEnemy"
+#define MOVE_BIG_ENEMY "MoveBigEnemy"
+#define REMOVE_BIG_ENEMY "RemoveBigEnemy"
+#define CRASH_BIG_ENEMY "CrashBigEnemy"
+#define HIT_BIG_ENEMY "HitBigEnemy"
 #define ADD_NORMAL_BULLET "AddNormalBullet"
 #define MOVE_NORMAL_BULLET "NormalBulletMove"
 #define REMOVE_NORMAL_BULLET "RemoveNormalBullet"
@@ -33,13 +38,15 @@
 
 #define SMALL_ENEMY_SPEED 200
 #define MIDDLE_ENEMY_SPEED 130
-#define BIG_ENEMY_SPEED 100
+#define BIG_ENEMY_SPEED 80
 #define BULLET_SPEED 1300
 
 #define SMALL_ENEMY_WIDTH 57
 #define SMALL_ENEMY_HEIGHT 43
 #define MIDDLE_ENEMY_WIDTH 69
 #define MIDDLE_ENEMY_HEIGHT 99
+#define BIG_ENEMY_WIDTH 169
+#define BIG_ENEMY_HEIGHT 258
 #define PLAYER_WIDTH 70
 #define PLAYER_HEIGHT 100
 #define BULLET_WIDTH 5
@@ -50,6 +57,8 @@
 #define SMALL_ENEMY_BLOW_COUNT 4
 #define MIDDLE_ENEMY_BLOW_COUNT 4
 #define MIDDLE_ENEMY_HIT_COUNT 1
+#define BIG_ENEMY_BLOW_COUNT 6
+#define BIG_ENEMY_HIT_COUNT 1
 
 enum PLAYER_STATE{
     PLAYER_STABLE = 1,

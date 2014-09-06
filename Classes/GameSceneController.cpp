@@ -34,6 +34,11 @@ void GameSceneController::createMiddleEnemys()
     pObject->getMiddleEnemys()->createEnemy();
 }
 
+void GameSceneController::createBigEnemys()
+{
+    pObject->getBigEnemys()->createEnemy();
+}
+
 void GameSceneController::createBullets()
 {
     CCLOG("Create a bullet!");
@@ -72,6 +77,7 @@ bool GameSceneController::init()
         this->schedule(schedule_selector(GameSceneController::createBullets), 0.15f);
         this->schedule(schedule_selector(GameSceneController::createSmallEnemys), 0.5f);
         this->schedule(schedule_selector(GameSceneController::createMiddleEnemys), 3.0f);
+        this->schedule(schedule_selector(GameSceneController::createBigEnemys), 15.0f);
     }
     return true;
 }

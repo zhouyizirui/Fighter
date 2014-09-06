@@ -17,6 +17,7 @@ GameObject::~GameObject()
     CC_SAFE_RELEASE(player);
     CC_SAFE_RELEASE(smallEnemys);
     CC_SAFE_RELEASE(middleEnemys);
+    CC_SAFE_RELEASE(bigEnemys);
     CC_SAFE_RELEASE(bullets);
 }
 
@@ -32,6 +33,10 @@ bool GameObject::init()
     middleEnemys = new MiddleEnemys();
     middleEnemys->init();
     middleEnemys->retain();
+    
+    bigEnemys = new BigEnemys();
+    bigEnemys->init();
+    bigEnemys->retain();
     
     bullets = new Bullets();
     bullets->init();
@@ -55,6 +60,11 @@ MiddleEnemys* GameObject::getMiddleEnemys()
     return middleEnemys;
 }
 
+BigEnemys* GameObject::getBigEnemys()
+{
+    return bigEnemys;
+}
+
 Bullets* GameObject::getBullets()
 {
     return bullets;
@@ -74,32 +84,32 @@ void GameObject::collisionDetection()
     for(int i=0; i<smallEnemys->getSmallArray()->count(); i++)
     {
         ModelPoint* enemy = (ModelPoint*)smallEnemys->getSmallArray()->objectAtIndex(i);
-        //CCLOG("enemy size %f, %f", enemy->getSize()->getWidth(), enemy->getSize()->getHeight());
-        //CCLOG("HAHAHHA enemy point %f, %f", enemy->getPosition()->x, enemy->getPosition()->y);
-        //CCLOG("Player point %f, %f", player->getPosition()->x, player->getPosition()->y);
         if(isIntersect(enemy->getPosition(), enemy->getSize(), player->getPosition(), player->getSize()))
         {
-            //CCDirector::sharedDirector()->pause();
             player->hitEnemy();
             smallEnemys->hitPlayer(i);
             break;
         }
-        //if(player->getPosition())
     }
     for(int i=0; i<middleEnemys->getMiddleArray()->count(); i++)
     {
         ModelPoint* enemy = (ModelPoint*)middleEnemys->getMiddleArray()->objectAtIndex(i);
-        //CCLOG("enemy size %f, %f", enemy->getSize()->getWidth(), enemy->getSize()->getHeight());
-        //CCLOG("HAHAHHA enemy point %f, %f", enemy->getPosition()->x, enemy->getPosition()->y);
-        //CCLOG("Player point %f, %f", player->getPosition()->x, player->getPosition()->y);
         if(isIntersect(enemy->getPosition(), enemy->getSize(), player->getPosition(), player->getSize()))
         {
-            //CCDirector::sharedDirector()->pause();
             player->hitEnemy();
             middleEnemys->hitPlayer(i);
             break;
         }
-        //if(player->getPosition())
+    }
+    for(int i=0; i<bigEnemys->getBigArray()->count(); i++)
+    {
+        ModelPoint* enemy = (ModelPoint*)bigEnemys->getBigArray()->objectAtIndex(i);
+        if(isIntersect(enemy->getPosition(), enemy->getSize(), player->getPosition(), player->getSize()))
+        {
+            player->hitEnemy();
+            bigEnemys->hitPlayer(i);
+            break;
+        }
     }
     for(int i=0; i<bullets->getBulletArray()->count(); i++)
     {
@@ -124,6 +134,16 @@ void GameObject::collisionDetection()
                 break;
             }
         }
+        for(int j=0; j<bigEnemys->getBigArray()->count(); j++)
+        {
+            ModelPoint* bigEnemy = (ModelPoint*)bigEnemys->getBigArray()->objectAtIndex(j);
+            if(isIntersect(bullet->getPosition(), bullet->getSize(), bigEnemy->getPosition(), bigEnemy->getSize()))
+            {
+                bullets->hitEnemy(i);
+                bigEnemys->hitBullet(j);
+                break;
+            }
+        }
     }
 }
 
@@ -132,6 +152,7 @@ void GameObject::update(float dt)
     player->update(dt);
     smallEnemys->update(dt);
     middleEnemys->update(dt);
+    bigEnemys->update(dt);
     bullets->update(dt);
     collisionDetection();
 }

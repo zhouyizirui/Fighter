@@ -23,6 +23,7 @@ bool GameSceneView::init()
     makeBackground();
     makeSmallEnemys();
     makeMiddleEnemys();
+    makeBigEnemys();
     makeBullets();
     
     setTouchEnabled(true);
@@ -54,6 +55,12 @@ void GameSceneView::makeMiddleEnemys()
 {
     pMiddleEnemys = MiddleEnemysView::create();
     this->addChild(pMiddleEnemys, 1);
+}
+
+void GameSceneView::makeBigEnemys()
+{
+    pBigEnemys = BigEnemysView::create();
+    this->addChild(pBigEnemys, 1);
 }
 
 void GameSceneView::makeBullets()

@@ -10,8 +10,7 @@
 #include "ModelPoint.h"
 #include "Constants.h"
 
-MiddleEnemys::MiddleEnemys():
-life(0)
+MiddleEnemys::MiddleEnemys()
 {
     
 }
