@@ -24,16 +24,34 @@ bool GameBoardView::init()
     this->addChild(backPicture, 0);
     
     CCSprite* titleIcon = CCSprite::createWithSpriteFrameName("shoot_copyright.png");
-    titleIcon->setPosition(ccp(size.width/2, size.height/1.4f));
+    titleIcon->setPosition(ccp(size.width/2, size.height/1.3f));
     this->addChild(titleIcon, 1);
 
     beginSprite = CCSprite::create("begin_game.png");
-    beginSprite->setPosition(ccp(size.width/2, size.height/2.2));
+    beginSprite->setPosition(ccp(size.width/2, size.height/2.5));
     this->addChild(beginSprite);
     
     quitSprite = CCSprite::create("quit_game.png");
-    quitSprite->setPosition(ccp(size.width/2, size.height/3.2));
+    quitSprite->setPosition(ccp(size.width/2, size.height/4));
     this->addChild(quitSprite);
+    
+    
+    CCSprite* loadSprite = CCSprite::create();
+    CCArray* aniFrames = CCArray::createWithCapacity(LOAD_ENEMY_COUNT);
+    for(int i = 0; i<LOAD_ENEMY_COUNT; i++)
+    {
+        char name[30] = {0};
+        sprintf(name, "game_loading%d.png", i+1);
+        CCSpriteFrame* spriteFrame = CCSpriteFrameCache::sharedSpriteFrameCache()->spriteFrameByName(name);
+        CC_BREAK_IF(!spriteFrame);
+        aniFrames->addObject(spriteFrame);
+    }
+    CCAnimation* animation = CCAnimation::createWithSpriteFrames(aniFrames, 0.5f);
+    CCAnimate* animate = CCAnimate::create(animation);
+    loadSprite->setPosition(ccp(size.width/2, size.height/2+20));
+    loadSprite->runAction(CCRepeatForever::create(animate));
+    this->addChild(loadSprite);
+    
     
     setTouchEnabled(true);
     setAccelerometerEnabled(true);

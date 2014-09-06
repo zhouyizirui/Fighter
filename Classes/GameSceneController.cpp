@@ -41,9 +41,14 @@ void GameSceneController::createBigEnemys()
 
 void GameSceneController::createBullets()
 {
-    CCLOG("Create a bullet!");
+    //CCLOG("Create a bullet!");
     CCPoint point = *(pObject->getPlayer()->getPosition());
     pObject->getBullets()->createBullet(point);
+}
+
+void GameSceneController::createAmmo()
+{
+    pObject->getAmmo()->createAmmo();
 }
 
 void GameSceneController::update(float dt)
@@ -75,9 +80,10 @@ bool GameSceneController::init()
         this->addChild(pView, 0);
         this->schedule(schedule_selector(GameSceneController::update));
         this->schedule(schedule_selector(GameSceneController::createBullets), 0.15f);
-        this->schedule(schedule_selector(GameSceneController::createSmallEnemys), 0.5f);
-        this->schedule(schedule_selector(GameSceneController::createMiddleEnemys), 3.0f);
-        this->schedule(schedule_selector(GameSceneController::createBigEnemys), 15.0f);
+        this->schedule(schedule_selector(GameSceneController::createSmallEnemys), 0.7f);
+        //this->schedule(schedule_selector(GameSceneController::createMiddleEnemys), 10.0f);
+        //this->schedule(schedule_selector(GameSceneController::createBigEnemys), 20.0f);
+        //this->schedule(schedule_selector(GameSceneController::createAmmo), 8.0f);
     }
     return true;
 }

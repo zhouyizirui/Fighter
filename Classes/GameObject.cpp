@@ -19,6 +19,7 @@ GameObject::~GameObject()
     CC_SAFE_RELEASE(middleEnemys);
     CC_SAFE_RELEASE(bigEnemys);
     CC_SAFE_RELEASE(bullets);
+    CC_SAFE_RELEASE(ammo);
 }
 
 bool GameObject::init()
@@ -41,6 +42,10 @@ bool GameObject::init()
     bullets = new Bullets();
     bullets->init();
     bullets->retain();
+    
+    ammo = new Ammo();
+    ammo->init();
+    ammo->retain();
     
     return true;
 }
@@ -81,6 +86,7 @@ bool GameObject::isIntersect(CCPoint* aPoint, ModelSize* aSize, CCPoint* bPoint,
 
 void GameObject::collisionDetection()
 {
+    //Detect player hit enemy
     for(int i=0; i<smallEnemys->getSmallArray()->count(); i++)
     {
         ModelPoint* enemy = (ModelPoint*)smallEnemys->getSmallArray()->objectAtIndex(i);
@@ -111,6 +117,8 @@ void GameObject::collisionDetection()
             break;
         }
     }
+    
+    //Detect bullet hit enemy
     for(int i=0; i<bullets->getBulletArray()->count(); i++)
     {
         bool jump = false;
@@ -152,6 +160,19 @@ void GameObject::collisionDetection()
         }
         CC_BREAK_IF(jump);
     }
+    
+    //Detect ammo hit player
+    if(isIntersect(ammo->getAmmo()->getPosition(), ammo->getAmmo()->getSize(), player->getPosition(), player->getSize()) && ammo->getIsVisible())
+    {
+        CCLOG("In the intersect");
+        bullets->upgradeSuper();
+        ammo->hitPlayer();
+    }
+}
+
+Ammo* GameObject::getAmmo()
+{
+    return ammo;
 }
 
 void GameObject::update(float dt)
@@ -161,5 +182,6 @@ void GameObject::update(float dt)
     middleEnemys->update(dt);
     bigEnemys->update(dt);
     bullets->update(dt);
+    ammo->update(dt);
     collisionDetection();
 }

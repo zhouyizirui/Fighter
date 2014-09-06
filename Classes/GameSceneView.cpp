@@ -25,6 +25,7 @@ bool GameSceneView::init()
     makeMiddleEnemys();
     makeBigEnemys();
     makeBullets();
+    makeAmmo();
     
     setTouchEnabled(true);
     setAccelerometerEnabled(true);
@@ -69,6 +70,12 @@ void GameSceneView::makeBullets()
     this->addChild(pBullets, 1);
 }
 
+void GameSceneView::makeAmmo()
+{
+    pAmmo = AmmoView::create();
+    this->addChild(pAmmo, 1);
+}
+
 void GameSceneView::initWithDelegate(GameSceneViewDelegate* delegate)
 {
     this->pDelegate = delegate;
@@ -83,7 +90,7 @@ bool GameSceneView::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
 
 void GameSceneView::ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent)
 {
-    CCLOG("Scene move the screen");
+    //CCLOG("Scene move the screen");
     CCPoint delta = pTouch->getDelta();
     CCPoint newPosition = ccp(pPlayer->getPosition().x+delta.x, pPlayer->getPosition().y+delta.y);
     this->pDelegate->dealWithTouchMove(newPosition);

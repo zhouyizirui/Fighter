@@ -52,7 +52,7 @@ void PlayerView::onSetup(CCObject* setPoint)
 
 void PlayerView::onMoveTo(CCObject* destPoint)
 {
-    CCLOG("Receive the move message");
+    //CCLOG("Receive the move message");
     this->setPosition(*(CCPoint*)destPoint);
 }
 

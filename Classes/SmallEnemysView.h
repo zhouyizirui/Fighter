@@ -17,6 +17,7 @@ class SmallEnemysView:public CCLayer
 {
 private:
     CCArray* enemysArray;
+    CCSpriteBatchNode* batchNode;
 public:
     SmallEnemysView();
     ~SmallEnemysView();

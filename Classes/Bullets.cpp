@@ -47,7 +47,7 @@ void Bullets::createBullet(CCPoint playerPos)
         bullet->setPoint(point.x, point.y);
         bullet->setSize(BULLET_WIDTH, BULLET_HEIGHT);
         bullets->addObject(bullet);
-        CCLOG("The number of bullets in createBullet %d", bullets->count());
+        //CCLOG("The number of bullets in createBullet %d", bullets->count());
         CCNotificationCenter::sharedNotificationCenter()->postNotification(ADD_NORMAL_BULLET, (CCObject*)&point);
     }
     else

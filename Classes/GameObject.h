@@ -17,6 +17,7 @@
 #include "SmallEnemys.h"
 #include "MiddleEnemys.h"
 #include "BigEnemys.h"
+#include "Ammo.h"
 #include <iostream>
 #include <string>
 
@@ -32,6 +33,7 @@ private:
     MiddleEnemys* middleEnemys;
     BigEnemys* bigEnemys;
     Bullets* bullets;
+    Ammo* ammo;
 public:
     GameObject();
     Player* getPlayer();
@@ -39,6 +41,7 @@ public:
     MiddleEnemys* getMiddleEnemys();
     BigEnemys* getBigEnemys();
     Bullets* getBullets();
+    Ammo* getAmmo();
     void collisionDetection();
     virtual ~GameObject();
     virtual bool init();

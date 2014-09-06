@@ -18,6 +18,8 @@ class BulletsView:public CCLayer
 {
 private:
     CCArray* bulletsArray;
+    CCSpriteBatchNode* batchNode;
+    //CCSpriteBatchNode* batchSuperNode;
 public:
     BulletsView();
     ~BulletsView();

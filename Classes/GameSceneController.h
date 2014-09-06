@@ -33,6 +33,7 @@ public:
     void createSmallEnemys();
     void createBigEnemys();
     void createBullets();
+    void createAmmo();
     CREATE_FUNC(GameSceneController);
 };
 #endif /* defined(__Fighter__GameSceneController__) */
