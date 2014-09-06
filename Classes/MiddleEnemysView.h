@@ -17,6 +17,7 @@ class MiddleEnemysView:public CCLayer
 {
 private:
     CCArray* enemysArray;
+    CCSpriteBatchNode* batchNode;
 public:
     MiddleEnemysView();
     ~MiddleEnemysView();

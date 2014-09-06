@@ -17,6 +17,7 @@ enemysArray(NULL)
 MiddleEnemysView::~MiddleEnemysView()
 {
     CC_SAFE_RELEASE(enemysArray);
+    //CC_SAFE_RELEASE(batchNode);
     CCNotificationCenter::sharedNotificationCenter()->removeAllObservers(this);
 }
 
@@ -24,6 +25,15 @@ bool MiddleEnemysView::init()
 {
     enemysArray = CCArray::create();
     enemysArray->retain();
+    
+    /*
+    CCTextureCache::sharedTextureCache()->addImage("enemy2.png");
+    batchNode = CCSpriteBatchNode::createWithTexture(CCTextureCache::sharedTextureCache()->textureForKey("enemy2.png"));
+    batchNode->setPosition(CCPointZero);
+    batchNode->retain();
+    this->addChild(batchNode);
+    */
+    
     CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(MiddleEnemysView::onCreateEnemy), ADD_MIDDLE_ENEMY, NULL);
     CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(MiddleEnemysView::onMoveStep), MOVE_MIDDLE_ENEMY, NULL);
     CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(MiddleEnemysView::onRemoveEnemy), REMOVE_MIDDLE_ENEMY, NULL);
@@ -35,6 +45,9 @@ bool MiddleEnemysView::init()
 void MiddleEnemysView::onCreateEnemy(CCObject* setPoint)
 {
     CCSprite* sprite = CCSprite::createWithSpriteFrameName("enemy2.png");
+    
+    //CCSprite* sprite = CCSprite::createWithTexture(batchNode->getTexture());
+    
     //CCLOG("The small bouding box %f, %f, %f, %f", sprite->boundingBox().getMaxX(), sprite->boundingBox().getMaxY(), sprite->boundingBox().getMinX(), sprite->boundingBox().getMinY());
     enemysArray->addObject(sprite);
     CCPoint startPoint = *(CCPoint*)setPoint;
@@ -42,6 +55,7 @@ void MiddleEnemysView::onCreateEnemy(CCObject* setPoint)
     //CCMoveTo* moveTo = CCMoveTo::create(SMALL_ENEMY_SPEED, ccp(startPoint.x, -1));
     //sprite->runAction(moveTo);
     this->addChild(sprite);
+    //batchNode->addChild(sprite);
 }
 
 void MiddleEnemysView::onMoveStep()
@@ -63,6 +77,7 @@ void MiddleEnemysView::onRemoveEnemy(CCObject* index)
     CCSprite* sprite = (CCSprite*)enemysArray->objectAtIndex(reIndex);
     enemysArray->removeObjectAtIndex(reIndex);
     this->removeChild(sprite);
+    //batchNode->removeChild(sprite, true);
 }
 
 //Think about the CCObject pointer index, why to use the local variable pointer

@@ -15,10 +15,15 @@ USING_NS_CC;
 
 class BackgroundView: public CCSprite
 {
+private:
+    CCSpriteBatchNode* batchNode;
+    CCSprite* backPicture1;
+    CCSprite* backPicture2;
 public:
     BackgroundView();
     ~BackgroundView();
     bool init();
+    virtual void update(float delta);
     CREATE_FUNC(BackgroundView);
 };
 
