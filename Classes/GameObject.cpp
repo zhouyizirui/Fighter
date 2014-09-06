@@ -113,6 +113,7 @@ void GameObject::collisionDetection()
     }
     for(int i=0; i<bullets->getBulletArray()->count(); i++)
     {
+        bool jump = false;
         ModelPoint* bullet = (ModelPoint*)bullets->getBulletArray()->objectAtIndex(i);
         for(int j=0; j<smallEnemys->getSmallArray()->count(); j++)
         {
@@ -121,9 +122,11 @@ void GameObject::collisionDetection()
             {
                 bullets->hitEnemy(i);
                 smallEnemys->hitBullet(j);
+                jump = true;
                 break;
             }
         }
+        CC_BREAK_IF(jump);
         for(int j=0; j<middleEnemys->getMiddleArray()->count(); j++)
         {
             ModelPoint* middleEnemy = (ModelPoint*)middleEnemys->getMiddleArray()->objectAtIndex(j);
@@ -131,9 +134,11 @@ void GameObject::collisionDetection()
             {
                 bullets->hitEnemy(i);
                 middleEnemys->hitBullet(j);
+                jump = true;
                 break;
             }
         }
+        CC_BREAK_IF(jump);
         for(int j=0; j<bigEnemys->getBigArray()->count(); j++)
         {
             ModelPoint* bigEnemy = (ModelPoint*)bigEnemys->getBigArray()->objectAtIndex(j);
@@ -141,9 +146,11 @@ void GameObject::collisionDetection()
             {
                 bullets->hitEnemy(i);
                 bigEnemys->hitBullet(j);
+                jump = true;
                 break;
             }
         }
+        CC_BREAK_IF(jump);
     }
 }
 

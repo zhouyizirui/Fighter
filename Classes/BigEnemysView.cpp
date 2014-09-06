@@ -79,7 +79,7 @@ void BigEnemysView::onCrashEnemy(CCObject* index)
         CC_BREAK_IF(!spriteFrame);
         aniFrames->addObject(spriteFrame);
     }
-    CCAnimation* animation = CCAnimation::createWithSpriteFrames(aniFrames, 0.05f);
+    CCAnimation* animation = CCAnimation::createWithSpriteFrames(aniFrames, 0.1f);
     CCAnimate* animate = CCAnimate::create(animation);
     CCSequence* sequence = CCSequence::create(animate, CCCallFuncN::create(this, callfuncN_selector(BigEnemysView::remove)), NULL);
     sprite->runAction(sequence);

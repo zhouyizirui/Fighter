@@ -23,7 +23,13 @@ bool Bullets::init()
     bullets = CCArray::create();
     bullets->retain();
     bulletType = NORMAL_BULLET;
+    //bulletType = SUPER_BULLET;
     return true;
+}
+
+void Bullets::upgradeSuper()
+{
+    bulletType = SUPER_BULLET;
 }
 
 CCArray* Bullets::getBulletArray()
@@ -46,7 +52,16 @@ void Bullets::createBullet(CCPoint playerPos)
     }
     else
     {
-        
+        ModelPoint* bulletLeft = new ModelPoint(1);
+        ModelPoint* bulletRight = new ModelPoint(1);
+        bulletLeft->setSize(BULLET_WIDTH, BULLET_HEIGHT);
+        bulletRight->setSize(BULLET_WIDTH, BULLET_HEIGHT);
+        CCPoint originPoint = playerPos;
+        bulletLeft->setPoint(playerPos.x-28, playerPos.y+20);
+        bulletRight->setPoint(playerPos.x+28, playerPos.y+20);
+        bullets->addObject(bulletLeft);
+        bullets->addObject(bulletRight);
+        CCNotificationCenter::sharedNotificationCenter()->postNotification(ADD_SUPER_BULLET, (CCObject*)&originPoint);
     }
 }
 
@@ -58,7 +73,7 @@ void Bullets::moveBullet()
         ModelPoint* bullet = (ModelPoint*)bullets->objectAtIndex(i);
         bullet->setPoint(bullet->getPointX(), bullet->getPointY()+FRAME_INTERVAL*BULLET_SPEED);
     }
-    CCNotificationCenter::sharedNotificationCenter()->postNotification(MOVE_NORMAL_BULLET);
+    CCNotificationCenter::sharedNotificationCenter()->postNotification(MOVE_BULLET);
     int removeIndex = detectBorder();
     if(removeIndex>=0) removeBullet(removeIndex);
 }
@@ -82,7 +97,7 @@ int Bullets::detectBorder()
 void Bullets::removeBullet(int index)
 {
     bullets->removeObjectAtIndex(index);
-    CCNotificationCenter::sharedNotificationCenter()->postNotification(REMOVE_NORMAL_BULLET, (CCObject*)&index);
+    CCNotificationCenter::sharedNotificationCenter()->postNotification(REMOVE_BULLET, (CCObject*)&index);
 }
 
 void Bullets::hitEnemy(int index)
@@ -92,7 +107,7 @@ void Bullets::hitEnemy(int index)
     if(bullet->getLife()==0)
     {
     bullets->removeObjectAtIndex(index);
-    CCNotificationCenter::sharedNotificationCenter()->postNotification(REMOVE_NORMAL_BULLET, (CCObject*)&index);
+    CCNotificationCenter::sharedNotificationCenter()->postNotification(REMOVE_BULLET, (CCObject*)&index);
     }
 }
 

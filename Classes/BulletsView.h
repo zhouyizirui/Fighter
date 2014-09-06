@@ -25,7 +25,8 @@ public:
     void onCreateBullet();
     void onMoveStep();
     void onRemoveBullet(CCObject * index);
-    void onCreateBullet(CCObject* setPoint);
+    void onCreateNormalBullet(CCObject* setPoint);
+    void onCreateSuperBullet(CCObject* setPoint);
     CREATE_FUNC(BulletsView);
 };
 

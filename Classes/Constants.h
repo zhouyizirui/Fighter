@@ -30,9 +30,13 @@
 #define REMOVE_BIG_ENEMY "RemoveBigEnemy"
 #define CRASH_BIG_ENEMY "CrashBigEnemy"
 #define HIT_BIG_ENEMY "HitBigEnemy"
+
 #define ADD_NORMAL_BULLET "AddNormalBullet"
-#define MOVE_NORMAL_BULLET "NormalBulletMove"
-#define REMOVE_NORMAL_BULLET "RemoveNormalBullet"
+#define MOVE_BULLET "BulletMove"
+#define REMOVE_BULLET "RemoveBullet"
+#define ADD_SUPER_BULLET "AddSuperBullet"
+//#define MOVE_SUPER_BULLET "SuperBulletMove"
+//#define REMOVE_SUPER_BULLET "RemoveSuperBullet"
 
 #define FRAME_INTERVAL 0.017
 
@@ -49,7 +53,7 @@
 #define BIG_ENEMY_HEIGHT 258
 #define PLAYER_WIDTH 70
 #define PLAYER_HEIGHT 100
-#define BULLET_WIDTH 5
+#define BULLET_WIDTH 8
 #define BULLET_HEIGHT 20
 
 #define PLAYER_FRAME_COUNT 2

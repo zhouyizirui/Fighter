@@ -37,7 +37,7 @@ void BigEnemys::createEnemy()
     int xLocation = rand()%380+50;
     int yLocation = 850;
     CCPoint point = ccp(xLocation, yLocation);
-    ModelPoint *enemyPoint = new ModelPoint(15);
+    ModelPoint *enemyPoint = new ModelPoint(30);
     enemyPoint->setPoint(point.x, point.y);
     enemyPoint->setSize(BIG_ENEMY_WIDTH, BIG_ENEMY_HEIGHT);
     bigEnemyArray->addObject(enemyPoint);

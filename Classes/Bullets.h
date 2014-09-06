@@ -29,6 +29,7 @@ public:
     int detectBorder();
     bool init();
     void moveBullet();
+    void upgradeSuper();
     void hitEnemy(int index);
     void createBullet(CCPoint playerPos);
     void removeBullet(int index);
