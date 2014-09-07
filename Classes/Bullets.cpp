@@ -23,18 +23,31 @@ bool Bullets::init()
     bullets = CCArray::create();
     bullets->retain();
     bulletType = NORMAL_BULLET;
+    superCount = 0;
     //bulletType = SUPER_BULLET;
     return true;
 }
 
 void Bullets::upgradeSuper()
 {
+    superCount += 10;
     bulletType = SUPER_BULLET;
+}
+
+void Bullets::downgradeNormal()
+{
+    superCount = 0;
+    bulletType = NORMAL_BULLET;
 }
 
 CCArray* Bullets::getBulletArray()
 {
     return bullets;
+}
+
+int Bullets::getSuperCount()
+{
+    return superCount;
 }
 
 void Bullets::createBullet(CCPoint playerPos)
@@ -61,6 +74,7 @@ void Bullets::createBullet(CCPoint playerPos)
         bulletRight->setPoint(playerPos.x+28, playerPos.y+20);
         bullets->addObject(bulletLeft);
         bullets->addObject(bulletRight);
+        superCount-=2;
         CCNotificationCenter::sharedNotificationCenter()->postNotification(ADD_SUPER_BULLET, (CCObject*)&originPoint);
     }
 }

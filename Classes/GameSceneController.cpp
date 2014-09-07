@@ -86,11 +86,11 @@ bool GameSceneController::init()
         
         this->addChild(pView, 0);
         this->schedule(schedule_selector(GameSceneController::update));
-        this->schedule(schedule_selector(GameSceneController::createBullets), 0.15f);
-        this->schedule(schedule_selector(GameSceneController::createSmallEnemys), 0.7f);
+        this->schedule(schedule_selector(GameSceneController::createBullets), 0.5f);//0.15
+        //this->schedule(schedule_selector(GameSceneController::createSmallEnemys), 0.7f);
         //this->schedule(schedule_selector(GameSceneController::createMiddleEnemys), 10.0f);
         //this->schedule(schedule_selector(GameSceneController::createBigEnemys), 20.0f);
-        //this->schedule(schedule_selector(GameSceneController::createAmmo), 8.0f);
+        this->schedule(schedule_selector(GameSceneController::createAmmo), 8.0f);
     }
     return true;
 }

@@ -170,6 +170,15 @@ void GameObject::collisionDetection()
     }
 }
 
+void GameObject::statusRefresh()
+{
+    if(bullets->getSuperCount()<=0)
+    {
+        //CCLOG("The lower boy");
+        bullets->downgradeNormal();
+    }
+}
+
 Ammo* GameObject::getAmmo()
 {
     return ammo;
@@ -184,4 +193,5 @@ void GameObject::update(float dt)
     bullets->update(dt);
     ammo->update(dt);
     collisionDetection();
+    statusRefresh();
 }

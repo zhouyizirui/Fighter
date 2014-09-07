@@ -22,6 +22,7 @@ class Bullets:public CCObject, public Updateable
 private:
     CCArray* bullets;
     BULLET_TYPE bulletType;
+    int superCount;
 public:
     Bullets();
     ~Bullets();
@@ -30,9 +31,11 @@ public:
     bool init();
     void moveBullet();
     void upgradeSuper();
+    void downgradeNormal();
     void hitEnemy(int index);
     void createBullet(CCPoint playerPos);
     void removeBullet(int index);
     CCArray* getBulletArray();
+    int getSuperCount();
 };
 #endif /* defined(__Fighter__Bullets__) */

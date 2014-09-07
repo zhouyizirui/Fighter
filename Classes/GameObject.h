@@ -43,6 +43,7 @@ public:
     Bullets* getBullets();
     Ammo* getAmmo();
     void collisionDetection();
+    void statusRefresh();
     virtual ~GameObject();
     virtual bool init();
     bool isIntersect(CCPoint* aPoint, ModelSize* aSize, CCPoint* bPoint, ModelSize* bSize);
