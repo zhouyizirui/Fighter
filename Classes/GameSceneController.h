@@ -16,12 +16,14 @@
 #include "Player.h"
 #include "SmallEnemys.h"
 #include "GameObject.h"
+#include "MusicEffect.h"
 
 class GameSceneController:public CCLayer, public GameSceneViewDelegate
 {
 private:
     GameSceneView* pView;
     GameObject* pObject;
+    MusicEffect* musicEffect;
 public:
     GameSceneController();
     virtual ~GameSceneController();

@@ -20,6 +20,7 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
                    ../../Classes/BigEnemys.cpp \
                    ../../Classes/ModelPoint.cpp \
                    ../../Classes/ModelSize.cpp \
+                   ../../Classes/MusicEffect.cpp \
                    ../../Classes/GameBoardController.cpp \
                    ../../Classes/GameSceneController.cpp \
                    ../../Classes/GameBoardView.cpp \

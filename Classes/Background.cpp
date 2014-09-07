@@ -16,15 +16,17 @@ Background::Background()
 Background::~Background()
 {
     CC_SAFE_RELEASE(pausePoint);
-    
+    CC_SAFE_RELEASE(bombPoint);
 }
 
 bool Background::init()
 {
     pausePoint = new ModelPoint(1);
+    pausePoint->retain();
     pausePoint->setPoint(30, 800-25);
     pausePoint->setSize(PAUSE_WIDTH, PAUSE_HEIGHT);
     bombPoint = new ModelPoint(1);
+    bombPoint->retain();
     bombPoint->setPoint(30, 28);
     bombPoint->setSize(BOMB_WIDTH, BOMB_HEIGHT);
     isPaused = false;

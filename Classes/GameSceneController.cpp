@@ -16,6 +16,7 @@ GameSceneController::~GameSceneController()
 {
     CC_SAFE_RELEASE(pView);
     CC_SAFE_RELEASE(pObject);
+    CC_SAFE_DELETE(musicEffect);
     this->unscheduleAllSelectors();
     //CC_SAFE_RELEASE(pPlayer);
     //CC_SAFE_RELEASE(pSmallEnemys);
@@ -51,6 +52,7 @@ void GameSceneController::createBullets()
     //CCLOG("Create a bullet!");
     CCPoint point = *(pObject->getPlayer()->getPosition());
     pObject->getBullets()->createBullet(point);
+    musicEffect->playBulletEmit();
 }
 
 void GameSceneController::createAmmo()
@@ -68,6 +70,8 @@ void GameSceneController::update(float dt)
     pObject->update(dt);
     if(pObject->isGameOver())
     {
+        SimpleAudioEngine::sharedEngine()->stopAllEffects();
+        SimpleAudioEngine::sharedEngine()->stopBackgroundMusic(true);
         GameOverView* overView = GameOverView::create();
         pView->addLayer(overView);
     }
@@ -84,15 +88,21 @@ bool GameSceneController::init()
         pSmallEnemys = new SmallEnemys();
         pSmallEnemys->retain();
         */
+        musicEffect = new MusicEffect();
+        musicEffect->playBackgroundMusic(); //FIX ME
+        //musicEffect->playBulletEmit(); //FIX ME
         
         pView = GameSceneView::create();
         pView->initWithDelegate(this);
         pView->retain();
         
         pObject = new GameObject();
-        pObject->init();
+        pObject->init(musicEffect);   //FIX ME
         pObject->retain();
         pObject->getPlayer()->setPosition();
+        
+
+        //musicEffect->retain();
         
         this->addChild(pView, 0);
         this->schedule(schedule_selector(GameSceneController::update));
@@ -121,11 +131,15 @@ CCScene* GameSceneController::scene()
 
 void GameSceneController::pauseGame()
 {
+    SimpleAudioEngine::sharedEngine()->pauseAllEffects();
+    SimpleAudioEngine::sharedEngine()->pauseBackgroundMusic();
     CCDirector::sharedDirector()->pause();
 }
 
 void GameSceneController::resumeGame()
 {
+    SimpleAudioEngine::sharedEngine()->resumeAllEffects();
+    SimpleAudioEngine::sharedEngine()->resumeBackgroundMusic();
     CCDirector::sharedDirector()->resume();
 }
 

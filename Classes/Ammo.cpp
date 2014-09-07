@@ -22,6 +22,7 @@ bool Ammo::init()
 {
     ammo = new ModelPoint(1);
     ammo->setSize(AMMO_WIDTH, AMMO_HEIGHT);
+    ammo->retain();
     isVisible = false;
     return true;
 }

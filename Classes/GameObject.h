@@ -16,6 +16,7 @@
 #include "Bullets.h"
 #include "SmallEnemys.h"
 #include "MiddleEnemys.h"
+#include "MusicEffect.h"
 #include "BigEnemys.h"
 #include "Background.h"
 #include "Ammo.h"
@@ -38,6 +39,7 @@ private:
     Ammo* ammo;
     Background* background;
     Bomb* bomb;
+    MusicEffect* musicEffect; //FIX ME
     bool isOver;
 public:
     GameObject();
@@ -54,7 +56,7 @@ public:
     void statusRefresh();
     void clearDesktop();
     virtual ~GameObject();
-    virtual bool init();
+    virtual bool init(MusicEffect* musicEffect); //FIX ME
     bool isIntersect(CCPoint* aPoint, ModelSize* aSize, CCPoint* bPoint, ModelSize* bSize);
     virtual void update(float dt);
     void onMessage(const string& msg);

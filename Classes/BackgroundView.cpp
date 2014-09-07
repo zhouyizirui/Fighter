@@ -17,10 +17,12 @@ BackgroundView::BackgroundView()
 
 BackgroundView::~BackgroundView()
 {
+    /*
     CC_SAFE_RELEASE(batchNode);
     CC_SAFE_RELEASE(bomb);
     CC_SAFE_RELEASE(bmFont);
     CC_SAFE_RELEASE(scores);
+     */
     CCTextureCache::sharedTextureCache()->removeTextureForKey("background.png");
     CCTextureCache::sharedTextureCache()->removeTextureForKey("bomb.png");
     CCTextureCache::sharedTextureCache()->removeTextureForKey("game_pause_nor.png");

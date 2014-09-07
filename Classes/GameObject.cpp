@@ -24,7 +24,7 @@ GameObject::~GameObject()
     CC_SAFE_RELEASE(bomb);
 }
 
-bool GameObject::init()
+bool GameObject::init(MusicEffect* musicEffect) //FIX ME
 {
     player = new Player();
     player->retain();
@@ -56,6 +56,8 @@ bool GameObject::init()
     bomb = new Bomb();
     bomb->init();
     bomb->retain();
+    
+    this->musicEffect = musicEffect;
     
     isOver = false;
     
@@ -110,10 +112,12 @@ void GameObject::clearDesktop()
         bigEnemys->hitPlayer(0);
     }
     background->useBomb();
+    musicEffect->playAllCrash(); //FIX ME
 }
 
 bool GameObject::isGameOver()
 {
+    musicEffect->playGameOver(); //FIX ME
     return isOver;
 }
 
@@ -208,6 +212,7 @@ void GameObject::collisionDetection()
     if(isIntersect(ammo->getAmmo()->getPosition(), ammo->getAmmo()->getSize(), player->getPosition(), player->getSize()) && ammo->getIsVisible())
     {
         CCLOG("In the intersect");
+        musicEffect->playGetAmmo(); //FIX ME
         bullets->upgradeSuper();
         ammo->hitPlayer();
     }
@@ -217,6 +222,7 @@ void GameObject::collisionDetection()
     {
         CCLOG("In the intersect");
         //bullets->upgradeSuper();
+        musicEffect->playGetBomb(); //FIX ME
         background->storeBomb();
         bomb->hitPlayer();
     }
