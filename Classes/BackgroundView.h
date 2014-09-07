@@ -19,11 +19,15 @@ private:
     CCSpriteBatchNode* batchNode;
     CCSprite* backPicture1;
     CCSprite* backPicture2;
+    CCSprite* bomb;
+    CCLabelBMFont* bmFont;
+    CCSprite* pauseButton;
 public:
     BackgroundView();
     ~BackgroundView();
     bool init();
     virtual void update(float delta);
+    void changeBombVisible();
     CREATE_FUNC(BackgroundView);
 };
 

@@ -108,14 +108,26 @@ CCScene* GameSceneController::scene()
     return scene;
 }
 
+void GameSceneController::pauseGame()
+{
+    CCDirector::sharedDirector()->pause();
+}
+
+void GameSceneController::resumeGame()
+{
+    CCDirector::sharedDirector()->resume();
+}
+
 void GameSceneController::dealWithTouchBegan(CCPoint startPoint)
 {
-    
+    CCLOG("dealWithTouchbegan");
+    int indicator = pObject->getBackground()->judgePause(startPoint);
+    if(indicator==-1) pauseGame();
+    //else if(pObject->getBackground()->judgePause(startPoint)==1)
+    else if(indicator==1) resumeGame();
 }
 
 void GameSceneController::dealWithTouchMove(CCPoint duraPoint)
 {
-    //Judge the point whether exceeds the border or not
-    //CCLOG("Move the scene controller");
     pObject->getPlayer()->movePosition(duraPoint);
 }

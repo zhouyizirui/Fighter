@@ -80,11 +80,14 @@ void GameSceneView::initWithDelegate(GameSceneViewDelegate* delegate)
 {
     this->pDelegate = delegate;
     CCLOG("Init the scene delegate");
+    
 }
 
 bool GameSceneView::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
 {
     CCLOG("Scene touch the screen");
+    CCPoint originPoint = pTouch->getLocation();
+    this->pDelegate->dealWithTouchBegan(originPoint);
     return true;
 }
 

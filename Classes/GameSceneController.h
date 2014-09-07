@@ -29,6 +29,8 @@ public:
     virtual void dealWithTouchMove(CCPoint duraPoint);
     virtual bool init();
     void update(float dt);
+    void pauseGame();
+    void resumeGame();
     void createMiddleEnemys();
     void createSmallEnemys();
     void createBigEnemys();

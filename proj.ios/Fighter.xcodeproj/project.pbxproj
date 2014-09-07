@@ -268,6 +268,11 @@
 		EF41985C19BB579100DB0BEE /* enemy2.png in Resources */ = {isa = PBXBuildFile; fileRef = EF41985919BB579100DB0BEE /* enemy2.png */; };
 		EF41985D19BB579100DB0BEE /* enemy3_n1.png in Resources */ = {isa = PBXBuildFile; fileRef = EF41985A19BB579100DB0BEE /* enemy3_n1.png */; };
 		EF41985F19BB5E2400DB0BEE /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = EF41985E19BB5E2400DB0BEE /* background.png */; };
+		EF5558B919BC0F1000DFF37C /* bomb.png in Resources */ = {isa = PBXBuildFile; fileRef = EF5558B819BC0F1000DFF37C /* bomb.png */; };
+		EF5558BC19BC130400DFF37C /* font.fnt in Resources */ = {isa = PBXBuildFile; fileRef = EF5558BA19BC130400DFF37C /* font.fnt */; };
+		EF5558BD19BC130400DFF37C /* font.png in Resources */ = {isa = PBXBuildFile; fileRef = EF5558BB19BC130400DFF37C /* font.png */; };
+		EF5558BF19BC23CB00DFF37C /* game_pause_nor.png in Resources */ = {isa = PBXBuildFile; fileRef = EF5558BE19BC23CB00DFF37C /* game_pause_nor.png */; };
+		EF5558C219BC24FE00DFF37C /* Background.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF5558C019BC24FE00DFF37C /* Background.cpp */; };
 		EF787B0F19BA30F600A08856 /* BigEnemys.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF787B0D19BA30F600A08856 /* BigEnemys.cpp */; };
 		EFDC3A7219B3176E00BC8BB0 /* GameLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDC3A7019B3176E00BC8BB0 /* GameLayer.cpp */; };
 		EFDC3A7519B3199D00BC8BB0 /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDC3A7319B3199D00BC8BB0 /* GameObject.cpp */; };
@@ -835,6 +840,12 @@
 		EF41985919BB579100DB0BEE /* enemy2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemy2.png; sourceTree = "<group>"; };
 		EF41985A19BB579100DB0BEE /* enemy3_n1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemy3_n1.png; sourceTree = "<group>"; };
 		EF41985E19BB5E2400DB0BEE /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		EF5558B819BC0F1000DFF37C /* bomb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bomb.png; sourceTree = "<group>"; };
+		EF5558BA19BC130400DFF37C /* font.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = font.fnt; sourceTree = "<group>"; };
+		EF5558BB19BC130400DFF37C /* font.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = font.png; sourceTree = "<group>"; };
+		EF5558BE19BC23CB00DFF37C /* game_pause_nor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = game_pause_nor.png; sourceTree = "<group>"; };
+		EF5558C019BC24FE00DFF37C /* Background.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Background.cpp; sourceTree = "<group>"; };
+		EF5558C119BC24FE00DFF37C /* Background.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Background.h; sourceTree = "<group>"; };
 		EF787B0D19BA30F600A08856 /* BigEnemys.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BigEnemys.cpp; sourceTree = "<group>"; };
 		EF787B0E19BA30F600A08856 /* BigEnemys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigEnemys.h; sourceTree = "<group>"; };
 		EFDC3A7019B3176E00BC8BB0 /* GameLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameLayer.cpp; sourceTree = "<group>"; };
@@ -2022,6 +2033,10 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EF5558BE19BC23CB00DFF37C /* game_pause_nor.png */,
+				EF5558BA19BC130400DFF37C /* font.fnt */,
+				EF5558BB19BC130400DFF37C /* font.png */,
+				EF5558B819BC0F1000DFF37C /* bomb.png */,
 				EF41985E19BB5E2400DB0BEE /* background.png */,
 				EF41985819BB579100DB0BEE /* enemy1.png */,
 				EF41985919BB579100DB0BEE /* enemy2.png */,
@@ -2101,6 +2116,8 @@
 				EFDC3A7419B3199D00BC8BB0 /* GameObject.h */,
 				EFDC3AA519B4BB3900BC8BB0 /* Player.cpp */,
 				EFDC3AA619B4BB3900BC8BB0 /* Player.h */,
+				EF5558C019BC24FE00DFF37C /* Background.cpp */,
+				EF5558C119BC24FE00DFF37C /* Background.h */,
 				EFDC3AC019B895E200BC8BB0 /* Bullets.cpp */,
 				EFDC3AC119B895E200BC8BB0 /* Bullets.h */,
 				EF41984E19BAEF9900DB0BEE /* Ammo.cpp */,
@@ -2190,6 +2207,7 @@
 			files = (
 				7855E0E1153FEF240059DD9A /* Default.png in Resources */,
 				D4EF949A15BD2D8B00D803EB /* Icon-57.png in Resources */,
+				EF5558BD19BC130400DFF37C /* font.png in Resources */,
 				EFDC3A8C19B35E9000BC8BB0 /* backgrounds.plist in Resources */,
 				EF41985C19BB579100DB0BEE /* enemy2.png in Resources */,
 				EFDC3A9A19B4955600BC8BB0 /* quit_game.png in Resources */,
@@ -2199,6 +2217,8 @@
 				D4EF949E15BD2D9600D803EB /* Icon-72.png in Resources */,
 				D4EF94A015BD2D9800D803EB /* Icon-144.png in Resources */,
 				D41A0AD1160F154A004552AE /* Default-568h@2x.png in Resources */,
+				EF5558B919BC0F1000DFF37C /* bomb.png in Resources */,
+				EF5558BC19BC130400DFF37C /* font.fnt in Resources */,
 				EF41985D19BB579100DB0BEE /* enemy3_n1.png in Resources */,
 				D446FD6E16102124000ADA7B /* Default@2x.png in Resources */,
 				15A3D9961682F7F9002FB0C5 /* CMakeLists.txt in Resources */,
@@ -2206,6 +2226,7 @@
 				EFDC3AA119B4A83800BC8BB0 /* elements.png in Resources */,
 				EF41985519BB47C300DB0BEE /* bullet1.png in Resources */,
 				1AFAF8BC16D35E4900DB1158 /* CloseNormal.png in Resources */,
+				EF5558BF19BC23CB00DFF37C /* game_pause_nor.png in Resources */,
 				EF41985B19BB579100DB0BEE /* enemy1.png in Resources */,
 				1AFAF8BD16D35E4900DB1158 /* CloseSelected.png in Resources */,
 				1AFAF8BE16D35E4900DB1158 /* HelloWorld.png in Resources */,
@@ -2278,6 +2299,7 @@
 				15A3D9281682F7D5002FB0C5 /* b2RopeJoint.cpp in Sources */,
 				15A3D9291682F7D5002FB0C5 /* b2WeldJoint.cpp in Sources */,
 				15A3D92A1682F7D5002FB0C5 /* b2WheelJoint.cpp in Sources */,
+				EF5558C219BC24FE00DFF37C /* Background.cpp in Sources */,
 				15A3D9391682F7D5002FB0C5 /* b2Rope.cpp in Sources */,
 				EFDC3AB619B60AEF00BC8BB0 /* SmallEnemysView.cpp in Sources */,
 				15A3D9951682F7F9002FB0C5 /* chipmunk.c in Sources */,

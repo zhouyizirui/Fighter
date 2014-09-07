@@ -15,6 +15,7 @@ GameObject::GameObject()
 GameObject::~GameObject()
 {
     CC_SAFE_RELEASE(player);
+    CC_SAFE_RELEASE(background);
     CC_SAFE_RELEASE(smallEnemys);
     CC_SAFE_RELEASE(middleEnemys);
     CC_SAFE_RELEASE(bigEnemys);
@@ -26,6 +27,10 @@ bool GameObject::init()
 {
     player = new Player();
     player->retain();
+    
+    background = new Background();
+    background->init();
+    background->retain();
     
     smallEnemys = new SmallEnemys();
     smallEnemys->init();
@@ -73,6 +78,11 @@ BigEnemys* GameObject::getBigEnemys()
 Bullets* GameObject::getBullets()
 {
     return bullets;
+}
+
+Background* GameObject::getBackground()
+{
+    return background;
 }
 
 bool GameObject::isIntersect(CCPoint* aPoint, ModelSize* aSize, CCPoint* bPoint, ModelSize* bSize)
