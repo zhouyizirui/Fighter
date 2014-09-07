@@ -11,14 +11,20 @@
 
 BackgroundView::BackgroundView()
 {
+    totalScore = 0;
 }
 
 BackgroundView::~BackgroundView()
 {
     CC_SAFE_RELEASE(batchNode);
+    CC_SAFE_RELEASE(bomb);
+    CC_SAFE_RELEASE(bmFont);
+    CC_SAFE_RELEASE(scores);
     CCTextureCache::sharedTextureCache()->removeTextureForKey("background.png");
     CCTextureCache::sharedTextureCache()->removeTextureForKey("bomb.png");
     CCTextureCache::sharedTextureCache()->removeTextureForKey("game_pause_nor.png");
+    
+    CCNotificationCenter::sharedNotificationCenter()->removeAllObservers(this);
 }
 
 
@@ -58,6 +64,11 @@ bool BackgroundView::init()
     pauseButton->setPosition(ccp(30, 800-25));
     this->addChild(pauseButton);
     
+    scores = CCLabelBMFont::create("0", "font.fnt");
+    scores->setPosition(ccp(160, 800-25));
+    this->addChild(scores);
+    
+    CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(BackgroundView::onSetScore), SET_SCORE, NULL);
     
     return true;
 }
@@ -66,6 +77,14 @@ void BackgroundView::changeBombVisible()
 {
     bomb->setVisible(!bomb->isVisible());
     bmFont->setVisible(!bmFont->isVisible());
+}
+
+void BackgroundView::onSetScore(CCObject* score)
+{
+    totalScore = (int)score+totalScore;
+    char newScore[10];
+    sprintf(newScore, "%d", totalScore);
+    scores->setString(newScore);
 }
 
 void BackgroundView::update(float delta)

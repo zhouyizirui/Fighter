@@ -91,10 +91,11 @@ void MiddleEnemys::hitBullet(int index)
     {
         middleEnemyArray->removeObjectAtIndex(index);
         CCNotificationCenter::sharedNotificationCenter()->postNotification(CRASH_MIDDLE_ENEMY,(CCObject*)&index);
+        CCNotificationCenter::sharedNotificationCenter()->postNotification(SET_SCORE, (CCObject*)MIDDLE_ENEMY_SCORE);
     }
     else
     {
-        CCLOG("INFLJASDJFKLASDJKLGJAKLJFKLJADSLKFJLKADSJFLKJASDLKFJLAJFLJALFJ");
+        //CCLOG("INFLJASDJFKLASDJKLGJAKLJFKLJADSLKFJLKADSJFLKJASDLKFJLAJFLJALFJ");
         CCNotificationCenter::sharedNotificationCenter()->postNotification(HIT_MIDDLE_ENEMY, (CCObject*)&index);
     }
 }

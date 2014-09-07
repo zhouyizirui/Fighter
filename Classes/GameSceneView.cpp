@@ -27,6 +27,7 @@ bool GameSceneView::init()
     makeBullets();
     makeAmmo();
     
+    
     setTouchEnabled(true);
     setAccelerometerEnabled(true);
     CCDirector::sharedDirector()->getTouchDispatcher()->addTargetedDelegate(this, 0, true);
@@ -74,6 +75,11 @@ void GameSceneView::makeAmmo()
 {
     pAmmo = AmmoView::create();
     this->addChild(pAmmo, 1);
+}
+
+void GameSceneView::addLayer(CCLayer* layer)
+{
+    this->addChild(layer, 100);
 }
 
 void GameSceneView::initWithDelegate(GameSceneViewDelegate* delegate)

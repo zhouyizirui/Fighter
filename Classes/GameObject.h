@@ -36,6 +36,8 @@ private:
     Bullets* bullets;
     Ammo* ammo;
     Background* background;
+    bool isOver;
+    //int score;
 public:
     GameObject();
     Player* getPlayer();
@@ -46,6 +48,7 @@ public:
     Ammo* getAmmo();
     Background* getBackground();
     void collisionDetection();
+    bool isGameOver();
     void statusRefresh();
     virtual ~GameObject();
     virtual bool init();

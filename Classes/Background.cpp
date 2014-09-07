@@ -49,3 +49,8 @@ int Background::judgePause(CCPoint tapPoint)
     }
     else return 0;
 }
+
+void Background::setScore(int score)
+{
+    CCNotificationCenter::sharedNotificationCenter()->postNotification(SET_SCORE, (CCObject*)&score);
+}

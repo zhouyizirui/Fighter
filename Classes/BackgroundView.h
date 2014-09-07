@@ -21,13 +21,16 @@ private:
     CCSprite* backPicture2;
     CCSprite* bomb;
     CCLabelBMFont* bmFont;
+    CCLabelBMFont* scores;
     CCSprite* pauseButton;
+    int totalScore;
 public:
     BackgroundView();
     ~BackgroundView();
     bool init();
     virtual void update(float delta);
     void changeBombVisible();
+    void onSetScore(CCObject* score);
     CREATE_FUNC(BackgroundView);
 };
 

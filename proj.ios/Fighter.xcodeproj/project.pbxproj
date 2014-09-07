@@ -273,6 +273,9 @@
 		EF5558BD19BC130400DFF37C /* font.png in Resources */ = {isa = PBXBuildFile; fileRef = EF5558BB19BC130400DFF37C /* font.png */; };
 		EF5558BF19BC23CB00DFF37C /* game_pause_nor.png in Resources */ = {isa = PBXBuildFile; fileRef = EF5558BE19BC23CB00DFF37C /* game_pause_nor.png */; };
 		EF5558C219BC24FE00DFF37C /* Background.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF5558C019BC24FE00DFF37C /* Background.cpp */; };
+		EF5558C819BC498600DFF37C /* GameOverView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF5558C619BC498600DFF37C /* GameOverView.cpp */; };
+		EF5558CE19BC671500DFF37C /* overback_opt.png in Resources */ = {isa = PBXBuildFile; fileRef = EF5558CD19BC671500DFF37C /* overback_opt.png */; };
+		EF5558D019BC67DE00DFF37C /* yes_opt.png in Resources */ = {isa = PBXBuildFile; fileRef = EF5558CF19BC67DE00DFF37C /* yes_opt.png */; };
 		EF787B0F19BA30F600A08856 /* BigEnemys.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF787B0D19BA30F600A08856 /* BigEnemys.cpp */; };
 		EFDC3A7219B3176E00BC8BB0 /* GameLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDC3A7019B3176E00BC8BB0 /* GameLayer.cpp */; };
 		EFDC3A7519B3199D00BC8BB0 /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDC3A7319B3199D00BC8BB0 /* GameObject.cpp */; };
@@ -846,6 +849,10 @@
 		EF5558BE19BC23CB00DFF37C /* game_pause_nor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = game_pause_nor.png; sourceTree = "<group>"; };
 		EF5558C019BC24FE00DFF37C /* Background.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Background.cpp; sourceTree = "<group>"; };
 		EF5558C119BC24FE00DFF37C /* Background.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Background.h; sourceTree = "<group>"; };
+		EF5558C619BC498600DFF37C /* GameOverView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameOverView.cpp; sourceTree = "<group>"; };
+		EF5558C719BC498600DFF37C /* GameOverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverView.h; sourceTree = "<group>"; };
+		EF5558CD19BC671500DFF37C /* overback_opt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overback_opt.png; sourceTree = "<group>"; };
+		EF5558CF19BC67DE00DFF37C /* yes_opt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yes_opt.png; sourceTree = "<group>"; };
 		EF787B0D19BA30F600A08856 /* BigEnemys.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BigEnemys.cpp; sourceTree = "<group>"; };
 		EF787B0E19BA30F600A08856 /* BigEnemys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigEnemys.h; sourceTree = "<group>"; };
 		EFDC3A7019B3176E00BC8BB0 /* GameLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameLayer.cpp; sourceTree = "<group>"; };
@@ -2033,6 +2040,8 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EF5558CF19BC67DE00DFF37C /* yes_opt.png */,
+				EF5558CD19BC671500DFF37C /* overback_opt.png */,
 				EF5558BE19BC23CB00DFF37C /* game_pause_nor.png */,
 				EF5558BA19BC130400DFF37C /* font.fnt */,
 				EF5558BB19BC130400DFF37C /* font.png */,
@@ -2085,6 +2094,8 @@
 				EFDC3ACA19B9D10F00BC8BB0 /* MiddleEnemysView.h */,
 				EF41984B19BAC00700DB0BEE /* BigEnemysView.cpp */,
 				EF41984C19BAC00700DB0BEE /* BigEnemysView.h */,
+				EF5558C619BC498600DFF37C /* GameOverView.cpp */,
+				EF5558C719BC498600DFF37C /* GameOverView.h */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -2206,6 +2217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7855E0E1153FEF240059DD9A /* Default.png in Resources */,
+				EF5558D019BC67DE00DFF37C /* yes_opt.png in Resources */,
 				D4EF949A15BD2D8B00D803EB /* Icon-57.png in Resources */,
 				EF5558BD19BC130400DFF37C /* font.png in Resources */,
 				EFDC3A8C19B35E9000BC8BB0 /* backgrounds.plist in Resources */,
@@ -2232,6 +2244,7 @@
 				1AFAF8BE16D35E4900DB1158 /* HelloWorld.png in Resources */,
 				EFDC3A8D19B35E9000BC8BB0 /* backgrounds.png in Resources */,
 				EF41985F19BB5E2400DB0BEE /* background.png in Resources */,
+				EF5558CE19BC671500DFF37C /* overback_opt.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2419,6 +2432,7 @@
 				1A8F3B74175E05DA00049216 /* AttachmentLoader.cpp in Sources */,
 				1A8F3B75175E05DA00049216 /* Bone.cpp in Sources */,
 				1A8F3B76175E05DA00049216 /* BoneData.cpp in Sources */,
+				EF5558C819BC498600DFF37C /* GameOverView.cpp in Sources */,
 				1A8F3B77175E05DA00049216 /* CCSkeleton.cpp in Sources */,
 				1A8F3B78175E05DA00049216 /* CCSkeletonAnimation.cpp in Sources */,
 				375BD5121868454E0024609E /* CCActionNode.cpp in Sources */,

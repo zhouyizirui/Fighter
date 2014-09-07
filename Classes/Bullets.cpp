@@ -30,7 +30,7 @@ bool Bullets::init()
 
 void Bullets::upgradeSuper()
 {
-    superCount += 10;
+    superCount += UPGRADE_SUPER_COUNT;
     bulletType = SUPER_BULLET;
 }
 

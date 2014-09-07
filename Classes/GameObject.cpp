@@ -52,6 +52,9 @@ bool GameObject::init()
     ammo->init();
     ammo->retain();
     
+    isOver = false;
+    //score = 0;
+    
     return true;
 }
 
@@ -85,6 +88,11 @@ Background* GameObject::getBackground()
     return background;
 }
 
+bool GameObject::isGameOver()
+{
+    return isOver;
+}
+
 bool GameObject::isIntersect(CCPoint* aPoint, ModelSize* aSize, CCPoint* bPoint, ModelSize* bSize)
 {
     CCRect aRect = CCRectMake(aPoint->x-aSize->getWidth()/2, aPoint->y-aSize->getHeight()/2, aSize->getWidth(), aSize->getHeight());
@@ -104,6 +112,7 @@ void GameObject::collisionDetection()
         {
             player->hitEnemy();
             smallEnemys->hitPlayer(i);
+            isOver = true;
             break;
         }
     }
@@ -114,6 +123,7 @@ void GameObject::collisionDetection()
         {
             player->hitEnemy();
             middleEnemys->hitPlayer(i);
+            isOver = true;
             break;
         }
     }
@@ -124,6 +134,7 @@ void GameObject::collisionDetection()
         {
             player->hitEnemy();
             bigEnemys->hitPlayer(i);
+            isOver = true;
             break;
         }
     }

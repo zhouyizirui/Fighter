@@ -25,6 +25,7 @@ public:
     ~Background();
     bool getIsPaused();
     bool init();
+    void setScore(int score);
     int judgePause(CCPoint tapPoint);
 };
 

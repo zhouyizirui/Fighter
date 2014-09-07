@@ -11,6 +11,7 @@
 
 #include <iostream>
 #include "GameSceneView.h"
+#include "GameOverView.h"
 #include "Protocols.h"
 #include "Player.h"
 #include "SmallEnemys.h"

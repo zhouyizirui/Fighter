@@ -91,6 +91,7 @@ void BigEnemys::hitBullet(int index)
     {
         bigEnemyArray->removeObjectAtIndex(index);
         CCNotificationCenter::sharedNotificationCenter()->postNotification(CRASH_BIG_ENEMY,(CCObject*)&index);
+        CCNotificationCenter::sharedNotificationCenter()->postNotification(SET_SCORE, (CCObject*)BIG_ENEMY_SCORE);
     }
     else
     {

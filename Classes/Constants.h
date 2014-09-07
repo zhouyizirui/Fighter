@@ -38,6 +38,7 @@
 #define ADD_AMMO "AddAmmo"
 #define MOVE_AMMO "MoveAmmo"
 #define REMOVE_AMMO "RemoveAmmo"
+#define SET_SCORE "SetScore"
 //#define MOVE_SUPER_BULLET "SuperBulletMove"
 //#define REMOVE_SUPER_BULLET "RemoveSuperBullet"
 
@@ -46,7 +47,7 @@
 #define SMALL_ENEMY_SPEED 200
 #define MIDDLE_ENEMY_SPEED 130
 #define BIG_ENEMY_SPEED 80
-#define BULLET_SPEED 300
+#define BULLET_SPEED 1000
 #define AMMO_SPEED 300
 
 #define SMALL_ENEMY_WIDTH 57
@@ -72,6 +73,12 @@
 #define BIG_ENEMY_BLOW_COUNT 6
 #define BIG_ENEMY_HIT_COUNT 1
 #define LOAD_ENEMY_COUNT 4
+
+#define SMALL_ENEMY_SCORE 1000
+#define MIDDLE_ENEMY_SCORE 5000
+#define BIG_ENEMY_SCORE 20000
+
+#define UPGRADE_SUPER_COUNT 100
 
 enum PLAYER_STATE{
     PLAYER_STABLE = 1,
