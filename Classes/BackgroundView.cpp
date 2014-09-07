@@ -11,7 +11,8 @@
 
 BackgroundView::BackgroundView()
 {
-    totalScore = 0;
+    //totalScore = 0;
+    //totalBomb = 0;
 }
 
 BackgroundView::~BackgroundView()
@@ -69,7 +70,9 @@ bool BackgroundView::init()
     this->addChild(scores);
     
     CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(BackgroundView::onSetScore), SET_SCORE, NULL);
-    
+    CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(BackgroundView::onStoreBomb), STORE_BOMB, NULL);
+    CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(BackgroundView::onUseBomb), USE_BOMB, NULL);
+    CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(BackgroundView::changeBombVisible), CHANGE_BOMB_VISIBLE, NULL);
     return true;
 }
 
@@ -81,10 +84,28 @@ void BackgroundView::changeBombVisible()
 
 void BackgroundView::onSetScore(CCObject* score)
 {
-    totalScore = (int)score+totalScore;
+    int addScore = (int)score;
+    int currentScore = atoi(scores->getString());
+    int totalScore = addScore+currentScore;
     char newScore[10];
     sprintf(newScore, "%d", totalScore);
     scores->setString(newScore);
+}
+
+void BackgroundView::onStoreBomb(CCObject* bomb)
+{
+    int totalBomb = *(int*)bomb;
+    char newBombs[10];
+    sprintf(newBombs, "X%d", totalBomb);
+    bmFont->setString(newBombs);
+}
+
+void BackgroundView::onUseBomb(CCObject* bomb)
+{
+    int totalBomb = *(int*)bomb;
+    char newBombs[10];
+    sprintf(newBombs, "X%d", totalBomb);
+    bmFont->setString(newBombs);
 }
 
 void BackgroundView::update(float delta)

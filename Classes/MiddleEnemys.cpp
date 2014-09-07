@@ -80,6 +80,7 @@ void MiddleEnemys::hitPlayer(int index)
     //ModelPoint* enemy = (ModelPoint*)middleEnemyArray->objectAtIndex(index);
     middleEnemyArray->removeObjectAtIndex(index);
     CCNotificationCenter::sharedNotificationCenter()->postNotification(CRASH_MIDDLE_ENEMY,(CCObject*)&index);
+    CCNotificationCenter::sharedNotificationCenter()->postNotification(SET_SCORE, (CCObject*)MIDDLE_ENEMY_SCORE);
 }
 
 void MiddleEnemys::hitBullet(int index)

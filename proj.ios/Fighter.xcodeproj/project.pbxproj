@@ -276,6 +276,8 @@
 		EF5558C819BC498600DFF37C /* GameOverView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF5558C619BC498600DFF37C /* GameOverView.cpp */; };
 		EF5558CE19BC671500DFF37C /* overback_opt.png in Resources */ = {isa = PBXBuildFile; fileRef = EF5558CD19BC671500DFF37C /* overback_opt.png */; };
 		EF5558D019BC67DE00DFF37C /* yes_opt.png in Resources */ = {isa = PBXBuildFile; fileRef = EF5558CF19BC67DE00DFF37C /* yes_opt.png */; };
+		EF5558D519BC7CAA00DFF37C /* Bomb.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF5558D319BC7CAA00DFF37C /* Bomb.cpp */; };
+		EF5558D819BC7E6100DFF37C /* BombView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF5558D619BC7E6100DFF37C /* BombView.cpp */; };
 		EF787B0F19BA30F600A08856 /* BigEnemys.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF787B0D19BA30F600A08856 /* BigEnemys.cpp */; };
 		EFDC3A7219B3176E00BC8BB0 /* GameLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDC3A7019B3176E00BC8BB0 /* GameLayer.cpp */; };
 		EFDC3A7519B3199D00BC8BB0 /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDC3A7319B3199D00BC8BB0 /* GameObject.cpp */; };
@@ -853,6 +855,10 @@
 		EF5558C719BC498600DFF37C /* GameOverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverView.h; sourceTree = "<group>"; };
 		EF5558CD19BC671500DFF37C /* overback_opt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overback_opt.png; sourceTree = "<group>"; };
 		EF5558CF19BC67DE00DFF37C /* yes_opt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yes_opt.png; sourceTree = "<group>"; };
+		EF5558D319BC7CAA00DFF37C /* Bomb.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bomb.cpp; sourceTree = "<group>"; };
+		EF5558D419BC7CAA00DFF37C /* Bomb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bomb.h; sourceTree = "<group>"; };
+		EF5558D619BC7E6100DFF37C /* BombView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BombView.cpp; sourceTree = "<group>"; };
+		EF5558D719BC7E6100DFF37C /* BombView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BombView.h; sourceTree = "<group>"; };
 		EF787B0D19BA30F600A08856 /* BigEnemys.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BigEnemys.cpp; sourceTree = "<group>"; };
 		EF787B0E19BA30F600A08856 /* BigEnemys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigEnemys.h; sourceTree = "<group>"; };
 		EFDC3A7019B3176E00BC8BB0 /* GameLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameLayer.cpp; sourceTree = "<group>"; };
@@ -2088,6 +2094,8 @@
 				EFDC3AAF19B603D000BC8BB0 /* BulletsView.h */,
 				EF41985119BAFD3900DB0BEE /* AmmoView.cpp */,
 				EF41985219BAFD3900DB0BEE /* AmmoView.h */,
+				EF5558D619BC7E6100DFF37C /* BombView.cpp */,
+				EF5558D719BC7E6100DFF37C /* BombView.h */,
 				EFDC3AB419B60AEF00BC8BB0 /* SmallEnemysView.cpp */,
 				EFDC3AB519B60AEF00BC8BB0 /* SmallEnemysView.h */,
 				EFDC3AC919B9D10F00BC8BB0 /* MiddleEnemysView.cpp */,
@@ -2133,6 +2141,8 @@
 				EFDC3AC119B895E200BC8BB0 /* Bullets.h */,
 				EF41984E19BAEF9900DB0BEE /* Ammo.cpp */,
 				EF41984F19BAEF9900DB0BEE /* Ammo.h */,
+				EF5558D319BC7CAA00DFF37C /* Bomb.cpp */,
+				EF5558D419BC7CAA00DFF37C /* Bomb.h */,
 				EFDC3AB119B6088300BC8BB0 /* SmallEnemys.cpp */,
 				EFDC3AB219B6088300BC8BB0 /* SmallEnemys.h */,
 				EFDC3AC619B9CB5000BC8BB0 /* MiddleEnemys.cpp */,
@@ -2444,6 +2454,7 @@
 				1A8F3B7D175E05DA00049216 /* SkeletonData.cpp in Sources */,
 				1A8F3B7E175E05DA00049216 /* SkeletonJson.cpp in Sources */,
 				1A8F3B7F175E05DA00049216 /* Skin.cpp in Sources */,
+				EF5558D519BC7CAA00DFF37C /* Bomb.cpp in Sources */,
 				298B29BE18D0668400C1920F /* LabelBMFontReader.cpp in Sources */,
 				1A8F3B80175E05DA00049216 /* Slot.cpp in Sources */,
 				1A8F3B81175E05DA00049216 /* SlotData.cpp in Sources */,
@@ -2483,6 +2494,7 @@
 				379BB9B017F03F3700829B88 /* CCComRender.cpp in Sources */,
 				379BB9B117F03F3700829B88 /* CCInputDelegate.cpp in Sources */,
 				379BB9B317F03F3700829B88 /* UIWidget.cpp in Sources */,
+				EF5558D819BC7E6100DFF37C /* BombView.cpp in Sources */,
 				379BB9B417F03F3700829B88 /* UILayout.cpp in Sources */,
 				379BB9B617F03F3700829B88 /* UILayoutParameter.cpp in Sources */,
 				379BB9B717F03F3700829B88 /* UILayoutDefine.cpp in Sources */,

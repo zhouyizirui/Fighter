@@ -58,6 +58,11 @@ void GameSceneController::createAmmo()
     pObject->getAmmo()->createAmmo();
 }
 
+void GameSceneController::createBomb()
+{
+    pObject->getBomb()->createBomb();
+}
+
 void GameSceneController::update(float dt)
 {
     pObject->update(dt);
@@ -96,6 +101,7 @@ bool GameSceneController::init()
         this->schedule(schedule_selector(GameSceneController::createMiddleEnemys), 10.0f);
         this->schedule(schedule_selector(GameSceneController::createBigEnemys), 20.0f);
         this->schedule(schedule_selector(GameSceneController::createAmmo), 80.0f);
+        this->schedule(schedule_selector(GameSceneController::createBomb), 60.0f);
     }
     return true;
 }
@@ -125,11 +131,13 @@ void GameSceneController::resumeGame()
 
 void GameSceneController::dealWithTouchBegan(CCPoint startPoint)
 {
-    CCLOG("dealWithTouchbegan");
     int indicator = pObject->getBackground()->judgePause(startPoint);
     if(indicator==-1) pauseGame();
-    //else if(pObject->getBackground()->judgePause(startPoint)==1)
     else if(indicator==1) resumeGame();
+    
+    bool clear = pObject->getBackground()->judgeUseBomb(startPoint);
+    CCLOG("%d",clear);
+    if(clear) pObject->clearDesktop();
 }
 
 void GameSceneController::dealWithTouchMove(CCPoint duraPoint)

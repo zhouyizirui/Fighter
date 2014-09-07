@@ -19,14 +19,20 @@ class Background:public CCObject
 {
 private:
     ModelPoint* pausePoint;
+    ModelPoint* bombPoint;
     bool isPaused;
+    //int totalScore;
+    int totalBomb;
 public:
     Background();
     ~Background();
     bool getIsPaused();
     bool init();
+    void storeBomb();
+    void useBomb();
     void setScore(int score);
     int judgePause(CCPoint tapPoint);
+    bool judgeUseBomb(CCPoint tapPoint);
 };
 
 #endif /* defined(__Fighter__Background__) */

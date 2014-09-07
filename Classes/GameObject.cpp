@@ -21,6 +21,7 @@ GameObject::~GameObject()
     CC_SAFE_RELEASE(bigEnemys);
     CC_SAFE_RELEASE(bullets);
     CC_SAFE_RELEASE(ammo);
+    CC_SAFE_RELEASE(bomb);
 }
 
 bool GameObject::init()
@@ -52,8 +53,11 @@ bool GameObject::init()
     ammo->init();
     ammo->retain();
     
+    bomb = new Bomb();
+    bomb->init();
+    bomb->retain();
+    
     isOver = false;
-    //score = 0;
     
     return true;
 }
@@ -88,6 +92,26 @@ Background* GameObject::getBackground()
     return background;
 }
 
+void GameObject::clearDesktop()
+{
+    int smallCount = smallEnemys->getSmallArray()->count();
+    int middleCount = middleEnemys->getMiddleArray()->count();
+    int bigCount = bigEnemys->getBigArray()->count();
+    for(int i=0; i<smallCount; i++)
+    {
+        smallEnemys->hitPlayer(0);
+    }
+    for(int i=0; i<middleCount; i++)
+    {
+        middleEnemys->hitPlayer(0);
+    }
+    for(int i=0; i<bigCount; i++)
+    {
+        bigEnemys->hitPlayer(0);
+    }
+    background->useBomb();
+}
+
 bool GameObject::isGameOver()
 {
     return isOver;
@@ -97,8 +121,6 @@ bool GameObject::isIntersect(CCPoint* aPoint, ModelSize* aSize, CCPoint* bPoint,
 {
     CCRect aRect = CCRectMake(aPoint->x-aSize->getWidth()/2, aPoint->y-aSize->getHeight()/2, aSize->getWidth(), aSize->getHeight());
     CCRect bRect = CCRectMake(bPoint->x-bSize->getWidth()/2, bPoint->y-bSize->getHeight()/2, bSize->getWidth(), bSize->getHeight());
-    //CCLOG("The a arect %f, %f", aRect.getMaxX(), aRect.getMaxY());
-    //CCLOG("The b arect %f, %f", bRect.getMaxX(), bRect.getMaxY());
     return aRect.intersectsRect(bRect);
 }
 
@@ -189,6 +211,15 @@ void GameObject::collisionDetection()
         bullets->upgradeSuper();
         ammo->hitPlayer();
     }
+    
+    //Dectect bomb hit player
+    if(isIntersect(bomb->getBomb()->getPosition(), bomb->getBomb()->getSize(), player->getPosition(), player->getSize()) && bomb->getIsVisible())
+    {
+        CCLOG("In the intersect");
+        //bullets->upgradeSuper();
+        background->storeBomb();
+        bomb->hitPlayer();
+    }
 }
 
 void GameObject::statusRefresh()
@@ -205,6 +236,11 @@ Ammo* GameObject::getAmmo()
     return ammo;
 }
 
+Bomb* GameObject::getBomb()
+{
+    return bomb;
+}
+
 void GameObject::update(float dt)
 {
     player->update(dt);
@@ -213,6 +249,7 @@ void GameObject::update(float dt)
     bigEnemys->update(dt);
     bullets->update(dt);
     ammo->update(dt);
+    bomb->update(dt);
     collisionDetection();
     statusRefresh();
 }

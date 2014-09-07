@@ -26,7 +26,7 @@ bool GameSceneView::init()
     makeBigEnemys();
     makeBullets();
     makeAmmo();
-    
+    makeBomb();
     
     setTouchEnabled(true);
     setAccelerometerEnabled(true);
@@ -77,6 +77,12 @@ void GameSceneView::makeAmmo()
     this->addChild(pAmmo, 1);
 }
 
+void GameSceneView::makeBomb()
+{
+    pBomb = BombView::create();
+    this->addChild(pBomb, 1);
+}
+
 void GameSceneView::addLayer(CCLayer* layer)
 {
     this->addChild(layer, 100);
@@ -86,7 +92,6 @@ void GameSceneView::initWithDelegate(GameSceneViewDelegate* delegate)
 {
     this->pDelegate = delegate;
     CCLOG("Init the scene delegate");
-    
 }
 
 bool GameSceneView::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)

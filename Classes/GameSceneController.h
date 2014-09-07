@@ -37,6 +37,7 @@ public:
     void createBigEnemys();
     void createBullets();
     void createAmmo();
+    void createBomb();
     CREATE_FUNC(GameSceneController);
 };
 #endif /* defined(__Fighter__GameSceneController__) */

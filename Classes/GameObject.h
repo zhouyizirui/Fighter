@@ -19,6 +19,7 @@
 #include "BigEnemys.h"
 #include "Background.h"
 #include "Ammo.h"
+#include "Bomb.h"
 #include <iostream>
 #include <string>
 
@@ -36,8 +37,8 @@ private:
     Bullets* bullets;
     Ammo* ammo;
     Background* background;
+    Bomb* bomb;
     bool isOver;
-    //int score;
 public:
     GameObject();
     Player* getPlayer();
@@ -46,10 +47,12 @@ public:
     BigEnemys* getBigEnemys();
     Bullets* getBullets();
     Ammo* getAmmo();
+    Bomb* getBomb();
     Background* getBackground();
     void collisionDetection();
     bool isGameOver();
     void statusRefresh();
+    void clearDesktop();
     virtual ~GameObject();
     virtual bool init();
     bool isIntersect(CCPoint* aPoint, ModelSize* aSize, CCPoint* bPoint, ModelSize* bSize);

@@ -18,6 +18,7 @@
 #include "MiddleEnemysView.h"
 #include "BigEnemysView.h"
 #include "AmmoView.h"
+#include "BombView.h"
 #include "BulletsView.h"
 USING_NS_CC;
 
@@ -31,6 +32,7 @@ private:
     BackgroundView* pBackground;
     BulletsView* pBullets;
     AmmoView* pAmmo;
+    BombView* pBomb;
     GameSceneViewDelegate* pDelegate;
 public:
     virtual bool init();
@@ -45,6 +47,7 @@ public:
     void makeBigEnemys();
     void makeBullets();
     void makeAmmo();
+    void makeBomb();
     void addLayer(CCLayer* layer);
     virtual bool ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent);
     virtual void ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent);

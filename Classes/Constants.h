@@ -30,6 +30,7 @@
 #define REMOVE_BIG_ENEMY "RemoveBigEnemy"
 #define CRASH_BIG_ENEMY "CrashBigEnemy"
 #define HIT_BIG_ENEMY "HitBigEnemy"
+#define CHANGE_BOMB_VISIBLE "ChangeBombVisible"
 
 #define ADD_NORMAL_BULLET "AddNormalBullet"
 #define MOVE_BULLET "BulletMove"
@@ -39,6 +40,11 @@
 #define MOVE_AMMO "MoveAmmo"
 #define REMOVE_AMMO "RemoveAmmo"
 #define SET_SCORE "SetScore"
+#define ADD_BOMB "AddBomb"
+#define MOVE_BOMB "MoveBomb"
+#define REMOVE_BOMB "RemoveBomb"
+#define STORE_BOMB "StoreBomb"
+#define USE_BOMB "UseBomb"
 //#define MOVE_SUPER_BULLET "SuperBulletMove"
 //#define REMOVE_SUPER_BULLET "RemoveSuperBullet"
 
@@ -48,7 +54,8 @@
 #define MIDDLE_ENEMY_SPEED 130
 #define BIG_ENEMY_SPEED 80
 #define BULLET_SPEED 1000
-#define AMMO_SPEED 300
+#define AMMO_SPEED 400
+#define BOMB_SPEED 400
 
 #define SMALL_ENEMY_WIDTH 57
 #define SMALL_ENEMY_HEIGHT 43
@@ -62,6 +69,8 @@
 #define BULLET_HEIGHT 20
 #define AMMO_WIDTH 58
 #define AMMO_HEIGHT 88
+#define BOMB_WIDTH 63
+#define BOMB_HEIGHT 57
 #define PAUSE_WIDTH 60
 #define PAUSE_HEIGHT 45
 

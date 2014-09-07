@@ -83,7 +83,9 @@ void SmallEnemys::hitPlayer(int index)
     if(enemy->getLife()==0)
     {
         smallEnemyArray->removeObjectAtIndex(index);
+        
         CCNotificationCenter::sharedNotificationCenter()->postNotification(CRASH_SMALL_ENEMY,(CCObject*)&index);
+        CCNotificationCenter::sharedNotificationCenter()->postNotification(SET_SCORE, (CCObject*)SMALL_ENEMY_SCORE);
     }
 }
 
@@ -95,6 +97,7 @@ void SmallEnemys::hitBullet(int index)
     if(enemy->getLife()==0)
     {
         smallEnemyArray->removeObjectAtIndex(index);
+        
         CCNotificationCenter::sharedNotificationCenter()->postNotification(CRASH_SMALL_ENEMY,(CCObject*)&index);
         CCNotificationCenter::sharedNotificationCenter()->postNotification(SET_SCORE, (CCObject*)SMALL_ENEMY_SCORE);
     }

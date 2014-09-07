@@ -80,6 +80,7 @@ void BigEnemys::hitPlayer(int index)
     //ModelPoint* enemy = (ModelPoint*)middleEnemyArray->objectAtIndex(index);
     bigEnemyArray->removeObjectAtIndex(index);
     CCNotificationCenter::sharedNotificationCenter()->postNotification(CRASH_BIG_ENEMY,(CCObject*)&index);
+    CCNotificationCenter::sharedNotificationCenter()->postNotification(SET_SCORE, (CCObject*)BIG_ENEMY_SCORE);
 }
 
 void BigEnemys::hitBullet(int index)

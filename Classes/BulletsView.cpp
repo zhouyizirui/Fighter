@@ -38,6 +38,7 @@ bool BulletsView::init()
     CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(BulletsView::onCreateSuperBullet), ADD_SUPER_BULLET, NULL);
     CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(BulletsView::onMoveStep), MOVE_BULLET, NULL);
     CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(BulletsView::onRemoveBullet), REMOVE_BULLET, NULL);
+    
     return true;
 }
 
