@@ -5,7 +5,7 @@ Fighter
 
 This is a repository of a famous game named "打飞机", it was extremely pervasive in Wechat platform last year. I reimplement it with MVC architecture based on Cocos2dx.
 
-## MVC based on Cocos2dx
+## MVC in Cocos2dx
 
 As we all know, MVC is popular in front-end development, since it allows the software to extend easily. However, in C++, or more precisely in Cocos2dx, MVC is not fully supported. This is because the primitive objective of Cocos2dx is to help developer build game easily, so it does not support MVC inside the engine. 
 
@@ -20,7 +20,7 @@ Let's recall the process in implementing a game with Cocos2dx.
 This process is easy to use when the game scale is small. But if the logics in the game become complex, simple design like this is not acceptable any more. This is because CCLayer does TOO MUCH things, it is reposible for displaying, logic control, events handling and other issues. When game becomes complicated, the codes become lengthy and UGLY! Hence, in this respository, I try to implement the game with MVC.
 
 Let's get started!
-The picture below show the MVC achitecture I used in cocos2dx game.
+The picture below show the MVC architecture I used in cocos2dx game.
 ![Example](https://github.com/zhouyizirui/Fighter/blob/master/Pictures/mvc.png)
 
 As we can see in the picture, there are three types of elements in MVC, controller, view and model. 
@@ -77,7 +77,7 @@ When we get a bomb, it appears on the left bottom of the scene. If we hit it, al
 We got double laser in the game, which significantly boost our fire. But unfortunately, we are hitten by an enemy. Game over, good luck the next time.
 
 That's all, enjoy it~
-## Reference
+## References
 
-1. [Cocos2dx中的MVC实现](http://xperienced.com.pl/blog/how-to-implement-mvc-pattern-in-cocos2d-game)
+1. [Cocos2d中的MVC实现](http://xperienced.com.pl/blog/how-to-implement-mvc-pattern-in-cocos2d-game)
 2. [王选易的MVC实现](http://www.cnblogs.com/neverdie/p/3754931.html)
