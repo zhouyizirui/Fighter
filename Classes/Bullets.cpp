@@ -77,6 +77,7 @@ void Bullets::createBullet(CCPoint playerPos)
         superCount-=2;
         CCNotificationCenter::sharedNotificationCenter()->postNotification(ADD_SUPER_BULLET, (CCObject*)&originPoint);
     }
+    CCNotificationCenter::sharedNotificationCenter()->postNotification(PLAY_BULLET_EFFECT);
 }
 
 void Bullets::moveBullet()

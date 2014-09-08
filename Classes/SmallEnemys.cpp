@@ -86,6 +86,7 @@ void SmallEnemys::hitPlayer(int index)
         
         CCNotificationCenter::sharedNotificationCenter()->postNotification(CRASH_SMALL_ENEMY,(CCObject*)&index);
         CCNotificationCenter::sharedNotificationCenter()->postNotification(SET_SCORE, (CCObject*)SMALL_ENEMY_SCORE);
+        CCNotificationCenter::sharedNotificationCenter()->postNotification(PLAY_SMALL_CRASH_EFFECT);
     }
 }
 
@@ -100,6 +101,7 @@ void SmallEnemys::hitBullet(int index)
         
         CCNotificationCenter::sharedNotificationCenter()->postNotification(CRASH_SMALL_ENEMY,(CCObject*)&index);
         CCNotificationCenter::sharedNotificationCenter()->postNotification(SET_SCORE, (CCObject*)SMALL_ENEMY_SCORE);
+        CCNotificationCenter::sharedNotificationCenter()->postNotification(PLAY_SMALL_CRASH_EFFECT);
     }
 }
 

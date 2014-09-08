@@ -12,12 +12,13 @@
 #include <iostream>
 #include "cocos2d.h"
 #include "cocos-ext.h"
+#include "Constants.h"
 #include "SimpleAudioEngine.h"
 USING_NS_CC;
 USING_NS_CC_EXT;
 using namespace CocosDenshion;
 
-class MusicEffect
+class MusicEffect:public CCObject
 {
 public:
     MusicEffect();

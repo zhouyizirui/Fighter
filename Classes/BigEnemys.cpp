@@ -81,6 +81,7 @@ void BigEnemys::hitPlayer(int index)
     bigEnemyArray->removeObjectAtIndex(index);
     CCNotificationCenter::sharedNotificationCenter()->postNotification(CRASH_BIG_ENEMY,(CCObject*)&index);
     CCNotificationCenter::sharedNotificationCenter()->postNotification(SET_SCORE, (CCObject*)BIG_ENEMY_SCORE);
+    CCNotificationCenter::sharedNotificationCenter()->postNotification(PLAY_BIG_CRASH_EFFECT);
 }
 
 void BigEnemys::hitBullet(int index)
@@ -93,6 +94,7 @@ void BigEnemys::hitBullet(int index)
         bigEnemyArray->removeObjectAtIndex(index);
         CCNotificationCenter::sharedNotificationCenter()->postNotification(CRASH_BIG_ENEMY,(CCObject*)&index);
         CCNotificationCenter::sharedNotificationCenter()->postNotification(SET_SCORE, (CCObject*)BIG_ENEMY_SCORE);
+        CCNotificationCenter::sharedNotificationCenter()->postNotification(PLAY_BIG_CRASH_EFFECT);
     }
     else
     {

@@ -21,11 +21,21 @@ MusicEffect::MusicEffect()
     SimpleAudioEngine::sharedEngine()->preloadEffect("get_bomb.mp3");
     SimpleAudioEngine::sharedEngine()->preloadEffect("get_double_laser.mp3");
     SimpleAudioEngine::sharedEngine()->preloadEffect("game_over.mp3");
+    
+    CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(MusicEffect::playBackgroundMusic), PLAY_BACKGROUND_MUSIC, NULL);
+    CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(MusicEffect::playBulletEmit), PLAY_BULLET_EFFECT, NULL);
+    CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(MusicEffect::playSmallEnemyCrash), PLAY_SMALL_CRASH_EFFECT, NULL);
+    CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(MusicEffect::playMiddleEnemyCrash), PLAY_MIDDLE_CRASH_EFFECT, NULL);
+    CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(MusicEffect::playBigEnemyCrash), PLAY_BIG_CRASH_EFFECT, NULL);
+    CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(MusicEffect::playGetBomb), PLAY_GET_BOMB_EFFECT, NULL);
+    CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(MusicEffect::playGetAmmo), PLAY_GET_AMMO_EFFECT, NULL);
+    CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(MusicEffect::playAllCrash), PLAY_ALL_CRASH_EFFECT, NULL);
+    CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(MusicEffect::playGameOver), PLAY_GAME_OVER_EFFECT, NULL);
 }
 
 MusicEffect::~MusicEffect()
 {
-
+    CCNotificationCenter::sharedNotificationCenter()->removeAllObservers(this);
 }
 
 void MusicEffect::playBackgroundMusic()
@@ -45,12 +55,12 @@ void MusicEffect::playSmallEnemyCrash()
 
 void MusicEffect::playMiddleEnemyCrash()
 {
-    SimpleAudioEngine::sharedEngine()->playEffect("enemy2_down.mp3",false);
+    SimpleAudioEngine::sharedEngine()->playEffect("enemy3_down.mp3",false);
 }
 
 void MusicEffect::playBigEnemyCrash()
 {
-    SimpleAudioEngine::sharedEngine()->playEffect("enemy3_down.mp3",false);
+    SimpleAudioEngine::sharedEngine()->playEffect("enemy2_down.mp3",false);
 }
 
 void MusicEffect::playAllCrash()
@@ -60,15 +70,15 @@ void MusicEffect::playAllCrash()
 
 void MusicEffect::playGetBomb()
 {
-    SimpleAudioEngine::sharedEngine()->preloadEffect("get_bomb.mp3");
+    SimpleAudioEngine::sharedEngine()->playEffect("get_bomb.mp3", false);
 }
 
 void MusicEffect::playGetAmmo()
 {
-    SimpleAudioEngine::sharedEngine()->preloadEffect("get_double_laser.mp3");
+    SimpleAudioEngine::sharedEngine()->playEffect("get_double_laser.mp3", false);
 }
 
 void MusicEffect::playGameOver()
 {
-    SimpleAudioEngine::sharedEngine()->preloadEffect("game_over.mp3");
+    SimpleAudioEngine::sharedEngine()->playEffect("game_over.mp3", false);
 }

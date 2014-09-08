@@ -463,6 +463,7 @@ obj/local/armeabi/objs/cocos2dcpp_shared/__/__/Classes/MusicEffect.o: \
  /Users/zhouyizirui/Works/Android/cocos2d-x-2.2.4/projects/Fighter/proj.android/../../../extensions/spine/SkeletonJson.h \
  /Users/zhouyizirui/Works/Android/cocos2d-x-2.2.4/projects/Fighter/proj.android/../../../extensions/spine/CCSkeleton.h \
  /Users/zhouyizirui/Works/Android/cocos2d-x-2.2.4/projects/Fighter/proj.android/../../../extensions/spine/CCSkeletonAnimation.h \
+ jni/../../Classes/Constants.h \
  /Users/zhouyizirui/Works/Android/cocos2d-x-2.2.4/projects/Fighter/proj.android/../../../CocosDenshion/android/../include/SimpleAudioEngine.h \
  /Users/zhouyizirui/Works/Android/cocos2d-x-2.2.4/projects/Fighter/proj.android/../../../CocosDenshion/android/../include/Export.h
 
@@ -1393,6 +1394,8 @@ jni/../../Classes/MusicEffect.h:
 /Users/zhouyizirui/Works/Android/cocos2d-x-2.2.4/projects/Fighter/proj.android/../../../extensions/spine/CCSkeleton.h:
 
 /Users/zhouyizirui/Works/Android/cocos2d-x-2.2.4/projects/Fighter/proj.android/../../../extensions/spine/CCSkeletonAnimation.h:
+
+jni/../../Classes/Constants.h:
 
 /Users/zhouyizirui/Works/Android/cocos2d-x-2.2.4/projects/Fighter/proj.android/../../../CocosDenshion/android/../include/SimpleAudioEngine.h:
 

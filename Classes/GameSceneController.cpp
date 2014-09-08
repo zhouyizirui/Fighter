@@ -52,7 +52,7 @@ void GameSceneController::createBullets()
     //CCLOG("Create a bullet!");
     CCPoint point = *(pObject->getPlayer()->getPosition());
     pObject->getBullets()->createBullet(point);
-    musicEffect->playBulletEmit();
+    //musicEffect->playBulletEmit();
 }
 
 void GameSceneController::createAmmo()
@@ -77,6 +77,8 @@ void GameSceneController::update(float dt)
     }
 }
 
+
+
 bool GameSceneController::init()
 {
     if(CCLayer::init())
@@ -89,7 +91,7 @@ bool GameSceneController::init()
         pSmallEnemys->retain();
         */
         musicEffect = new MusicEffect();
-        musicEffect->playBackgroundMusic(); //FIX ME
+        //musicEffect->playBackgroundMusic(); //FIX ME
         //musicEffect->playBulletEmit(); //FIX ME
         
         pView = GameSceneView::create();

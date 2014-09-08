@@ -45,6 +45,16 @@
 #define REMOVE_BOMB "RemoveBomb"
 #define STORE_BOMB "StoreBomb"
 #define USE_BOMB "UseBomb"
+
+#define PLAY_BACKGROUND_MUSIC "PlayBackground"
+#define PLAY_BULLET_EFFECT "PlayBulletEffect"
+#define PLAY_SMALL_CRASH_EFFECT "PlaySmallEffect"
+#define PLAY_MIDDLE_CRASH_EFFECT "PlayMiddleEffect"
+#define PLAY_BIG_CRASH_EFFECT "PlayBigEffect"
+#define PLAY_ALL_CRASH_EFFECT "PlayAllCrash"
+#define PLAY_GET_BOMB_EFFECT "PlayGetBomb"
+#define PLAY_GET_AMMO_EFFECT "PlayGetAmmo"
+#define PLAY_GAME_OVER_EFFECT "PlayGameOver"
 //#define MOVE_SUPER_BULLET "SuperBulletMove"
 //#define REMOVE_SUPER_BULLET "RemoveSuperBullet"
 

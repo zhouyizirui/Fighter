@@ -81,6 +81,7 @@ void MiddleEnemys::hitPlayer(int index)
     middleEnemyArray->removeObjectAtIndex(index);
     CCNotificationCenter::sharedNotificationCenter()->postNotification(CRASH_MIDDLE_ENEMY,(CCObject*)&index);
     CCNotificationCenter::sharedNotificationCenter()->postNotification(SET_SCORE, (CCObject*)MIDDLE_ENEMY_SCORE);
+    CCNotificationCenter::sharedNotificationCenter()->postNotification(PLAY_MIDDLE_CRASH_EFFECT);
 }
 
 void MiddleEnemys::hitBullet(int index)
@@ -93,6 +94,7 @@ void MiddleEnemys::hitBullet(int index)
         middleEnemyArray->removeObjectAtIndex(index);
         CCNotificationCenter::sharedNotificationCenter()->postNotification(CRASH_MIDDLE_ENEMY,(CCObject*)&index);
         CCNotificationCenter::sharedNotificationCenter()->postNotification(SET_SCORE, (CCObject*)MIDDLE_ENEMY_SCORE);
+        CCNotificationCenter::sharedNotificationCenter()->postNotification(PLAY_MIDDLE_CRASH_EFFECT);
     }
     else
     {

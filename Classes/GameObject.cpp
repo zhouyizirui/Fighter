@@ -58,6 +58,8 @@ bool GameObject::init(MusicEffect* musicEffect) //FIX ME
     bomb->retain();
     
     this->musicEffect = musicEffect;
+    //this->musicEffect->playBackgroundMusic(); //FIX ME
+    CCNotificationCenter::sharedNotificationCenter()->postNotification(PLAY_BACKGROUND_MUSIC);
     
     isOver = false;
     
@@ -112,12 +114,14 @@ void GameObject::clearDesktop()
         bigEnemys->hitPlayer(0);
     }
     background->useBomb();
-    musicEffect->playAllCrash(); //FIX ME
+    //musicEffect->playAllCrash(); //FIX ME
+    CCNotificationCenter::sharedNotificationCenter()->postNotification(PLAY_ALL_CRASH_EFFECT);
 }
 
 bool GameObject::isGameOver()
 {
-    musicEffect->playGameOver(); //FIX ME
+    //musicEffect->playGameOver(); //FIX ME
+    if(isOver) CCNotificationCenter::sharedNotificationCenter()->postNotification(PLAY_GAME_OVER_EFFECT);
     return isOver;
 }
 
@@ -212,7 +216,8 @@ void GameObject::collisionDetection()
     if(isIntersect(ammo->getAmmo()->getPosition(), ammo->getAmmo()->getSize(), player->getPosition(), player->getSize()) && ammo->getIsVisible())
     {
         CCLOG("In the intersect");
-        musicEffect->playGetAmmo(); //FIX ME
+        //musicEffect->playGetAmmo(); //FIX ME
+        CCNotificationCenter::sharedNotificationCenter()->postNotification(PLAY_GET_AMMO_EFFECT);
         bullets->upgradeSuper();
         ammo->hitPlayer();
     }
@@ -222,7 +227,8 @@ void GameObject::collisionDetection()
     {
         CCLOG("In the intersect");
         //bullets->upgradeSuper();
-        musicEffect->playGetBomb(); //FIX ME
+        //musicEffect->playGetBomb(); //FIX ME
+        CCNotificationCenter::sharedNotificationCenter()->postNotification(PLAY_GET_BOMB_EFFECT);
         background->storeBomb();
         bomb->hitPlayer();
     }
