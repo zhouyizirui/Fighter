@@ -3,7 +3,7 @@ Fighter
 
 ## Introduction
 
-This is a repository of a famous game named "打飞机", it was extremely pervasive in Wechat platform last year. I reimplement it with MVC architecture based on Cocos2dx.
+This is a repository of a famous game named "打飞机", it was extremely pervasive in Wechat platform last year. I implement it with MVC architecture based on Cocos2dx.
 
 ## MVC in Cocos2dx
 
