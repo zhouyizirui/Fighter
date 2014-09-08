@@ -74,8 +74,9 @@ When we get a bomb, it appears on the left bottom of the scene. If we hit it, al
 
 ![Example](https://github.com/zhouyizirui/Fighter/blob/master/Pictures/over.png)
 
-We got double laser in the game, which significantly boost our fire. But unfortunately, we are hitten by an enemy. Game over, good luck the next time~
+We got double laser in the game, which significantly boost our fire. But unfortunately, we are hitten by an enemy. Game over, good luck the next time.
 
-
+That's all, enjoy it~
 ## Reference
-
+1.[Cocos2dx中的MVC实现](http://xperienced.com.pl/blog/how-to-implement-mvc-pattern-in-cocos2d-game)
+2.[王选易的MVC实现](http://www.cnblogs.com/neverdie/p/3754931.html)
