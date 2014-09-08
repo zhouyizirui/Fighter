@@ -79,6 +79,5 @@ We got double laser in the game, which significantly boost our fire. But unfortu
 That's all, enjoy it~
 ## Reference
 
-1.[Cocos2dx中的MVC实现](http://xperienced.com.pl/blog/how-to-implement-mvc-pattern-in-cocos2d-game)
-
-2.[王选易的MVC实现](http://www.cnblogs.com/neverdie/p/3754931.html)
+1. [Cocos2dx中的MVC实现](http://xperienced.com.pl/blog/how-to-implement-mvc-pattern-in-cocos2d-game)
+2. [王选易的MVC实现](http://www.cnblogs.com/neverdie/p/3754931.html)
