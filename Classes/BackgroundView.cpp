@@ -26,6 +26,7 @@ BackgroundView::~BackgroundView()
     CCTextureCache::sharedTextureCache()->removeTextureForKey("background.png");
     CCTextureCache::sharedTextureCache()->removeTextureForKey("bomb.png");
     CCTextureCache::sharedTextureCache()->removeTextureForKey("game_pause_nor.png");
+
     
     CCNotificationCenter::sharedNotificationCenter()->removeAllObservers(this);
 }
@@ -41,6 +42,8 @@ bool BackgroundView::init()
     CCTextureCache::sharedTextureCache()->addImage("background.png");
     CCTextureCache::sharedTextureCache()->addImage("bomb.png");
     CCTextureCache::sharedTextureCache()->addImage("game_pause_nor.png");
+    
+    
     batchNode = CCSpriteBatchNode::createWithTexture(CCTextureCache::sharedTextureCache()->textureForKey("background.png"));
     batchNode->setPosition(CCPointZero);
     this->addChild(batchNode);
@@ -70,6 +73,8 @@ bool BackgroundView::init()
     scores = CCLabelBMFont::create("0", "font.fnt");
     scores->setPosition(ccp(160, 800-25));
     this->addChild(scores);
+    
+
     
     CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(BackgroundView::onSetScore), SET_SCORE, NULL);
     CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(BackgroundView::onStoreBomb), STORE_BOMB, NULL);

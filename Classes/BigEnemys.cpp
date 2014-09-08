@@ -35,7 +35,7 @@ bool BigEnemys::init()
 void BigEnemys::createEnemy()
 {
     int xLocation = rand()%380+50;
-    int yLocation = 850;
+    int yLocation = 900;
     CCPoint point = ccp(xLocation, yLocation);
     ModelPoint *enemyPoint = new ModelPoint(30);
     enemyPoint->setPoint(point.x, point.y);

@@ -22,6 +22,7 @@ class GameBoardView:public CCLayer
 private:
     CCSprite* beginSprite;
     CCSprite* quitSprite;
+    CCSprite* corp;
     GameBoardViewDelegate* pDelegate;
 public:
     virtual bool init();

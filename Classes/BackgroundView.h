@@ -20,6 +20,7 @@ private:
     CCSprite* backPicture1;
     CCSprite* backPicture2;
     CCSprite* bomb;
+
     CCLabelBMFont* bmFont;
     CCLabelBMFont* scores;
     CCSprite* pauseButton;

@@ -20,6 +20,7 @@ bool GameBoardView::init()
     CCSize size = CCDirector::sharedDirector()->getVisibleSize();
     CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("backgrounds.plist");
     CCSprite* backPicture = CCSprite::createWithSpriteFrameName("background.png");
+    CCTextureCache::sharedTextureCache()->addImage("corp.png");
     backPicture->setPosition(ccp(size.width/2, size.height/2));
     this->addChild(backPicture, 0);
     
@@ -35,6 +36,10 @@ bool GameBoardView::init()
     quitSprite->setPosition(ccp(size.width/2, size.height/4));
     this->addChild(quitSprite);
     
+    corp = CCSprite::create("corp.png");
+    corp->setPosition(ccp(size.width-120, 40));
+    corp->setScale(0.5f);
+    this->addChild(corp);
     
     CCSprite* loadSprite = CCSprite::create();
     CCArray* aniFrames = CCArray::createWithCapacity(LOAD_ENEMY_COUNT);

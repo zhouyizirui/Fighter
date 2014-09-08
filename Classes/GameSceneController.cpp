@@ -70,7 +70,7 @@ void GameSceneController::update(float dt)
     pObject->update(dt);
     if(pObject->isGameOver())
     {
-        SimpleAudioEngine::sharedEngine()->stopAllEffects();
+        //SimpleAudioEngine::sharedEngine()->stopAllEffects();
         SimpleAudioEngine::sharedEngine()->stopBackgroundMusic(true);
         GameOverView* overView = GameOverView::create();
         pView->addLayer(overView);

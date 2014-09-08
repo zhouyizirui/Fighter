@@ -36,6 +36,8 @@ MusicEffect::MusicEffect()
 MusicEffect::~MusicEffect()
 {
     CCNotificationCenter::sharedNotificationCenter()->removeAllObservers(this);
+    SimpleAudioEngine::sharedEngine()->stopAllEffects();
+    SimpleAudioEngine::sharedEngine()->stopBackgroundMusic(true);
 }
 
 void MusicEffect::playBackgroundMusic()

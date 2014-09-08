@@ -317,6 +317,7 @@
 		EFDC3AC519B89BE200BC8BB0 /* ModelPoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDC3AC319B89BE200BC8BB0 /* ModelPoint.cpp */; };
 		EFDC3AC819B9CB5000BC8BB0 /* MiddleEnemys.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDC3AC619B9CB5000BC8BB0 /* MiddleEnemys.cpp */; };
 		EFDC3ACB19B9D10F00BC8BB0 /* MiddleEnemysView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFDC3AC919B9D10F00BC8BB0 /* MiddleEnemysView.cpp */; };
+		EFF3582019BDF909007B0865 /* corp.png in Resources */ = {isa = PBXBuildFile; fileRef = EFF3581F19BDF909007B0865 /* corp.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -934,6 +935,7 @@
 		EFDC3AC719B9CB5000BC8BB0 /* MiddleEnemys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiddleEnemys.h; sourceTree = "<group>"; };
 		EFDC3AC919B9D10F00BC8BB0 /* MiddleEnemysView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MiddleEnemysView.cpp; sourceTree = "<group>"; };
 		EFDC3ACA19B9D10F00BC8BB0 /* MiddleEnemysView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiddleEnemysView.h; sourceTree = "<group>"; };
+		EFF3581F19BDF909007B0865 /* corp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = corp.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2077,6 +2079,7 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EFF3581F19BDF909007B0865 /* corp.png */,
 				EF5558D919BCB16D00DFF37C /* achievement.mp3 */,
 				EF5558DA19BCB16D00DFF37C /* big_spaceship_flying.mp3 */,
 				EF5558DB19BCB16D00DFF37C /* bullet.mp3 */,
@@ -2276,6 +2279,7 @@
 				EF5558F419BCB16D00DFF37C /* use_bomb.mp3 in Resources */,
 				7855E0E1153FEF240059DD9A /* Default.png in Resources */,
 				EF5558F119BCB16D00DFF37C /* get_bomb.mp3 in Resources */,
+				EFF3582019BDF909007B0865 /* corp.png in Resources */,
 				EF5558D019BC67DE00DFF37C /* yes_opt.png in Resources */,
 				D4EF949A15BD2D8B00D803EB /* Icon-57.png in Resources */,
 				EF5558BD19BC130400DFF37C /* font.png in Resources */,
