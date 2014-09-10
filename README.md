@@ -34,7 +34,7 @@ As we can see in the picture, there are three types of elements in MVC, controll
 In this picture, the solid line means the strong connection and the dotted line means the weak connection. More precisely, in cocos2dx, the VIEW can be implemented by CCLayer, since it should receive the touch events and do the displaying.But how can it pass the touch events to CONTROLLER? In this game, I use delegate to achieve this. When the CONTROLLER initializes the VIEW and MODEL, it passes the delegate of itself to VIEW and the VIEW hence uses this delegate to pass events. The CONTROLLER has the instance pointer of VIEW and MODEL, it gets the status of both models and views and decide what to do. You may ask, then how can we build connection between MODEL and VIEW, since the VIEW should update the displaying when MODEL changes. I use CCNotificationCenter to achieve this. CCNotificationCenter and post notifications from the MODEL to the VIEW, it works efficiently.
 
 By the way, when you open the project, it looks like this.
-![Example](https://github.com/zhouyizirui/Fighter/blob/master/Pictures/class.png)
+![Example](https://github.com/zhouyizirui/Fighter/blob/master/Pictures/classes.png)
 
 Of course, this is not the whole files in the game, but we can see that the classes are classified into three(four exactly) groups, Model, Controller and View. In this way, the structure of the game is more clear.
 
@@ -60,12 +60,12 @@ Of course, this is not the whole files in the game, but we can see that the clas
 #### Play it
 ![Example](https://github.com/zhouyizirui/Fighter/blob/master/Pictures/begin.png)
 
-This scene includes "开始游戏" and "退出游戏", of course we should press the former one~
+This scene includes "开始游戏" and "退出游戏", of course we should press the former one.
 
 #### In the scene
 ![Example](https://github.com/zhouyizirui/Fighter/blob/master/Pictures/score.png)
 
-In this play scene, when we crash one small enemy, we hear "boom" and get 1000 scores~
+In this play scene, when we crash one small enemy, we hear "boom" and get 1000 scores.
 
 #### Hit the big enemy
 ![Example](https://github.com/zhouyizirui/Fighter/blob/master/Pictures/hit.png)
