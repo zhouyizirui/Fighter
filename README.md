@@ -7,17 +7,19 @@ This is a repository of a famous game named "打飞机", it was extremely pervas
 
 ## MVC in Cocos2dx
 
-As we all know, MVC is popular in front-end development, since it allows the software to extend easily. However, in C++, or more precisely in Cocos2dx, MVC is not fully supported. This is because the primitive objective of Cocos2dx is to help developer build game easily, so it does not support MVC inside the engine. 
+As we all know, MVC is popular in front-end development, since it allows the software to extend easily. However, in C++, or more precisely in Cocos2dx, MVC is not fully supported. This is because the primitive objective of Cocos2dx is to help developer build game easily, so it does not support MVC inside the game engine. 
 
-Let's recall the process in implementing a game with Cocos2dx.
+Let's recall the former process in implementing a game with Cocos2dx.
 
 1. Create a CCScene and run it.
 2. Create a CCLayer as the child of CCScene.
 3. Create CCSprite on the CCLayer.
 4. Define CCAction for the sprites.
 5. Collision detection of these sprites.
+6. CCLayer responds to the touch events.
+7. Do the corresponding actions.
 
-This process is easy to use when the game scale is small. But if the logics in the game become complex, simple design like this is not acceptable any more. This is because CCLayer does TOO MUCH things, it is reposible for displaying, logic control, events handling and other issues. When game becomes complicated, the codes become lengthy and UGLY! Hence, in this respository, I try to implement the game with MVC.
+This process is easy to use when the game scale is small. But if the logics in the game become complex, simple design like this is not acceptable any more. This is because CCLayer does TOO MUCH things, it is responsible for displaying, logic control, events handling and other issues. When game becomes complicated, the codes become lengthy and UGLY! Hence, in this respository, I try to implement the game with MVC.
 
 Let's get started!
 The picture below show the MVC architecture I used in cocos2dx game.
@@ -30,6 +32,11 @@ As we can see in the picture, there are three types of elements in MVC, controll
 3. Model: the models represent entity in the game. It receives control from controller and do corresponding actions. Also, the collision detection is implemented in models.
 
 In this picture, the solid line means the strong connection and the dotted line means the weak connection. More precisely, in cocos2dx, the VIEW can be implemented by CCLayer, since it should receive the touch events and do the displaying.But how can it pass the touch events to CONTROLLER? In this game, I use delegate to achieve this. When the CONTROLLER initializes the VIEW and MODEL, it passes the delegate of itself to VIEW and the VIEW hence uses this delegate to pass events. The CONTROLLER has the instance pointer of VIEW and MODEL, it gets the status of both models and views and decide what to do. You may ask, then how can we build connection between MODEL and VIEW, since the VIEW should update the displaying when MODEL changes. I use CCNotificationCenter to achieve this. CCNotificationCenter and post notifications from the MODEL to the VIEW, it works efficiently.
+
+By the way, when you open the project, it looks like this.
+![Example](https://github.com/zhouyizirui/Fighter/blob/master/Pictures/class.png)
+
+Of course, this is not the whole files in the game, but we can see that the classes are classified into three(four exactly) groups, Model, Controller and View. In this way, the structure of the game is more clear.
 
 ## For ios users
 
