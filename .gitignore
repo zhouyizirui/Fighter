@@ -1,6 +1,7 @@
 *.o
 *.so
 *.lib
+*.a
 .gitignore
 .metadata
 .DS_store
