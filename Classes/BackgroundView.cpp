@@ -28,7 +28,7 @@ BackgroundView::~BackgroundView()
     CCTextureCache::sharedTextureCache()->removeTextureForKey("game_pause_nor.png");
 
     
-    CCNotificationCenter::sharedNotificationCenter()->removeAllObservers(this);
+    CCNotificationCenter::sharedNotificationCenter()->removeAllObservers(this); //Remove observers
 }
 
 
