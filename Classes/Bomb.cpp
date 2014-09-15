@@ -22,7 +22,7 @@ bool Bomb::init()
 {
     bomb = new ModelPoint(1);
     bomb->setSize(BOMB_WIDTH, BOMB_HEIGHT);
-    bomb->retain();
+    //bomb->retain(); //FIX ME
     isVisible = false;
     return true;
 }
