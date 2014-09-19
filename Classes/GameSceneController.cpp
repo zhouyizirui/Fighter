@@ -68,7 +68,7 @@ void GameSceneController::createBomb()
 void GameSceneController::update(float dt)
 {
     pObject->update(dt);
-    if(pObject->isGameOver())
+    if(pObject->isGameOver()) //GameOverView
     {
         //SimpleAudioEngine::sharedEngine()->stopAllEffects();
         SimpleAudioEngine::sharedEngine()->stopBackgroundMusic(true);
