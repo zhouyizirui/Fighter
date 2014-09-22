@@ -112,8 +112,8 @@ bool GameSceneController::init()
         this->schedule(schedule_selector(GameSceneController::createSmallEnemys), 0.7f);
         this->schedule(schedule_selector(GameSceneController::createMiddleEnemys), 7.0f);
         this->schedule(schedule_selector(GameSceneController::createBigEnemys), 14.0f);
-        this->schedule(schedule_selector(GameSceneController::createAmmo), 60.0f);
-        this->schedule(schedule_selector(GameSceneController::createBomb), 40.0f);
+        this->schedule(schedule_selector(GameSceneController::createAmmo), 40.0f);
+        this->schedule(schedule_selector(GameSceneController::createBomb), 30.0f);
     }
     return true;
 }
